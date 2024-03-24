@@ -2,11 +2,23 @@ import XCTest
 @testable import HMNetworking
 
 final class HMNetworkingTests: XCTestCase {
-    func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
-
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+    let client = HttpClient()
+    
+    func testExample() async throws {
+        let response = try await client.request {
+            URL(
+                domain: "https://jsonplaceholder.typicode.com",
+                path: "/comments"
+            ) {
+                Parameter(name: "postid", body: "1")
+            }
+            
+            HttpHeaders {
+                Header(.defaultUserAgent)
+                Header(name: "content-type", value: "application/json")
+            }
+        }
+        
+        print(String(data: response.data!, encoding: .utf8))                
     }
 }
