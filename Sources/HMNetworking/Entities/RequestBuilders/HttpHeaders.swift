@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-struct HttpHeaders: HttpRequestType {
+struct HttpHeaders: HttpRequestPreference {
     @HttpHeadersBuilder var builder: () -> HTTPHeaders
     
     func prepare(request: URLRequest) -> URLRequest {

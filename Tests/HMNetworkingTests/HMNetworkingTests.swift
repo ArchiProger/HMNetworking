@@ -5,11 +5,8 @@ final class HMNetworkingTests: XCTestCase {
     let client = HttpClient()
     
     func testExample() async throws {
-        let response = try await client.request {
-            URL(
-                domain: "https://jsonplaceholder.typicode.com",
-                path: "/comments"
-            ) {
+        let response = try await client.request("https://jsonplaceholder.typicode.com/comments") {
+            Query {
                 Parameter(name: "postid", body: "1")
             }
             
