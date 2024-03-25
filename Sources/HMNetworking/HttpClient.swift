@@ -11,6 +11,13 @@ import Alamofire
 struct HttpClient {
     func request(_ convertible: URLConvertible,
                  session: Session = AF,
+                 @HttpPluginsBuilder plugins: () -> [PluginType] = { [] }
+    ) async throws -> AFDataResponse<Data?> {
+        try await request(convertible, session: session, plugins: plugins, preferences: { })
+    }
+    
+    func request(_ convertible: URLConvertible,
+                 session: Session = AF,
                  @HttpPluginsBuilder plugins: () -> [PluginType] = { [] },
                  @HttpRequestBuilder preferences: () -> [HttpRequestPreference]
     ) async throws -> AFDataResponse<Data?> {

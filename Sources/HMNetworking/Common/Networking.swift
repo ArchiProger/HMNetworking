@@ -19,7 +19,7 @@ extension DataRequest {
     }
 }
 
-extension AFDataResponse {
+extension AFDataResponse<Data?> {
     enum ResponseError: LocalizedError {
         case dataNotFound
         
@@ -29,7 +29,7 @@ extension AFDataResponse {
     }
     
     func body<T: Decodable>(decoder: JSONDecoder = JSONDecoder()) throws -> T {
-        guard let data else { throw ResponseError.dataNotFound }
+        guard let data = try result.get() else { throw ResponseError.dataNotFound }
         
         return try decoder.decode(T.self, from: data)
     }
