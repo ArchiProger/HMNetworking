@@ -9,6 +9,12 @@ import Foundation
 import Alamofire
 
 struct HttpClient {
+    var defaultRequest = DefaultRequest()
+    
+    public init(@HttpDefaultRequestBuilder preferences: () -> [HttpDefaultRequestPreference] = { [] }) {
+        defaultRequest = defaultRequest.apply(preferences: preferences())
+    }
+    
     func request(_ convertible: URLConvertible,
                  session: Session = AF,
                  @HttpPluginsBuilder plugins: () -> [PluginType] = { [] }
@@ -22,14 +28,16 @@ struct HttpClient {
                  @HttpRequestBuilder preferences: () -> [HttpRequestPreference]
     ) async throws -> AFDataResponse<Data?> {
         
-        let url = try convertible.asURL()
-        let request = URLRequest(url: url)
+        let url = defaultRequest.host + convertible
+        let request = try URLRequest(url: url, method: .get, headers: defaultRequest.headers)
             .apply(preferences: preferences())
         
         let handler = session.request(request)
         
-        return await handler
+        let response = await handler
             .apply(plugins: plugins())
             .response()
+        
+        return try defaultRequest.responseHandler(response)
     }
 }

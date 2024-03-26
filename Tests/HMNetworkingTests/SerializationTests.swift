@@ -15,20 +15,33 @@ fileprivate struct PostDTO: Codable {
     var userId: Int
 }
 
+extension String: LocalizedError {
+    public var errorDescription: String? { self }
+}
+
 final class SerializationTests: XCTestCase {
-    private let client = HttpClient()
     private let post = PostDTO(title: "Data", body: "data serializer", userId: 1)
+    private let client = HttpClient {
+        Host("https://jsonplaceholder.typicode.com")
+        HttpHeaders {
+            Header(.contentType("application/json; charset=UTF-8"))
+        }
+        
+        ResponseValidation { response in
+            guard let code = response.response?.statusCode else { throw "Failed to get the error code" }
+            
+            guard (200..<300).contains(code) else { throw "Unsuccessful error status" }
+            
+            return response
+        }
+    }
     
     func testDataSerialization() async throws {
         let data = try JSONEncoder().encode(post)
         
-        let response = try await client.request("https://jsonplaceholder.typicode.com/posts") {
+        let response = try await client.request("/posts") {
             HttpMethod(.post)
             HttpBody(data: data)
-            
-            HttpHeaders {
-                Header(.contentType("application/json; charset=UTF-8"))
-            }
         }
         
         XCTAssertEqual(response.response?.statusCode, 201)
@@ -41,43 +54,32 @@ final class SerializationTests: XCTestCase {
             "userId": 1
         ]
         
-        let response = try await client.request("https://jsonplaceholder.typicode.com/posts") {
+        let response = try await client.request("/posts") {
             HttpMethod(.post)
             HttpBody(json: post)
-            
-            HttpHeaders {
-                Header(.contentType("application/json; charset=UTF-8"))
-            }
         }
         
         XCTAssertEqual(response.response?.statusCode, 201)
     }
     
     func testEncodableSerialization() async throws {
-        let response = try await client.request("https://jsonplaceholder.typicode.com/posts") {
+        let response = try await client.request("/posts") {
             HttpMethod(.post)
             HttpBody(encodable: self.post)
-            
-            HttpHeaders {
-                Header(.contentType("application/json; charset=UTF-8"))
-            }
         }
         
         XCTAssertEqual(response.response?.statusCode, 201)
     }
     
     func testDeserialization() async throws {
-        let response = try await client.request("https://jsonplaceholder.typicode.com/posts") {
+        let response = try await client.request("/posts") {
             HttpMethod(.post)
             HttpBody(encodable: self.post)
-            
-            HttpHeaders {
-                Header(.contentType("application/json; charset=UTF-8"))                
-            }
         }
         
         let post: PostDTO = try response.body()
         
+        XCTAssertEqual(response.response?.statusCode, 201)
         XCTAssertNotNil(post.id)
     }
 }

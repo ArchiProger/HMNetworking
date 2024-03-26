@@ -13,7 +13,7 @@ final class SimpleRequestsTests: XCTestCase {
     func testQuery() async throws {
         let response = try await client.request("https://jsonplaceholder.typicode.com/comments") {
             Query {
-                Parameter(name: "postid", body: "1")
+                Parameter(name: "postid", body: "1")                
             }
         }
         

@@ -12,10 +12,6 @@ final class QueryBuilder {
     static func buildBlock(_ components: Parameter...) -> String {
         let query = components.map { "\($0.name)=\($0.body)" }.joined(separator: "&")
         
-        return if components.isEmpty {
-            ""
-        } else {
-            "?" + query
-        }
+        return components.isEmpty ? "" : "?" + query
     }
 }
