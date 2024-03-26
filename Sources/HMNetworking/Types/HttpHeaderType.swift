@@ -9,5 +9,5 @@ import Foundation
 import Alamofire
 
 public protocol HttpHeaderType {
-    func prepare(headers: HTTPHeaders) -> HTTPHeaders
+    var header: HTTPHeader { get }
 }

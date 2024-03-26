@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 public struct Header: HttpHeaderType {
-    var header: HTTPHeader
+    public var header: HTTPHeader
     
     public init(_ header: HTTPHeader) {
         self.header = header
@@ -17,12 +17,5 @@ public struct Header: HttpHeaderType {
     
     public init(name: String, value: String) {
         self.header = .init(name: name, value: value)
-    }
-    
-    public func prepare(headers: HTTPHeaders) -> HTTPHeaders {
-        var headers = headers
-        headers.add(header)
-        
-        return headers
     }
 }
