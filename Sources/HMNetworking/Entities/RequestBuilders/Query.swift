@@ -8,14 +8,14 @@
 import Foundation
 import Alamofire
 
-struct Query: HttpRequestPreference {
+public struct Query: HttpRequestPreference {
     var url: String
     
-    init(@QueryBuilder parameters: () -> String) {
+    public init(@QueryBuilder parameters: () -> String) {
         self.url = parameters()
     }
     
-    func prepare(request: URLRequest) -> URLRequest {
+    public func prepare(request: URLRequest) -> URLRequest {
         let base = request.url?.absoluteString ?? ""
         let url = base + url
         

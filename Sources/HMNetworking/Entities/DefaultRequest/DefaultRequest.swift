@@ -8,12 +8,12 @@
 import Foundation
 import Alamofire
 
-typealias ResponseHandler = (AFDataResponse<Data?>) throws -> AFDataResponse<Data?>
+public typealias ResponseHandler = (AFDataResponse<Data?>) throws -> AFDataResponse<Data?>
 
-struct DefaultRequest {
-    var host: URLConvertible = ""
-    var headers: HTTPHeaders = []    
-    var responseHandler: ResponseHandler = { $0 }
+public struct DefaultRequest {
+    public var host: URLConvertible = ""
+    public var headers: HTTPHeaders = []
+    public var responseHandler: ResponseHandler = { $0 }    
 }
 
 extension DefaultRequest {

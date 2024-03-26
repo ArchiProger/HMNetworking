@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 @resultBuilder
-final class HttpHeadersBuilder {
-    static func buildBlock(_ components: HttpHeaderType...) -> HTTPHeaders {
+public final class HttpHeadersBuilder {
+    public static func buildBlock(_ components: HttpHeaderType...) -> HTTPHeaders {
         var headers = HTTPHeaders()
         
         components.forEach { type in

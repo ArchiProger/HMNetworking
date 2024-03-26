@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import HMNetworking
+import HMNetworking
 
 fileprivate struct PostDTO: Codable {
     var id: Int? = nil
@@ -30,7 +30,7 @@ final class SerializationTests: XCTestCase {
         ResponseValidation { response in
             guard let code = response.response?.statusCode else { throw "Failed to get the error code" }
             
-            guard (200..<300).contains(code) else { throw "Unsuccessful error status" }
+            guard (200...299).contains(code) else { throw "Unsuccessful error status" }
             
             return response
         }
@@ -48,15 +48,13 @@ final class SerializationTests: XCTestCase {
     }
     
     func testJSONSerialization() async throws {
-        let post: [String : Any] = [
-            "title": "Data",
-            "body": "data serializer",
-            "userId": 1
-        ]
-        
         let response = try await client.request("/posts") {
             HttpMethod(.post)
-            HttpBody(json: post)
+            HttpBody(json: [
+                "title": "Data",
+                "body": "data serializer",
+                "userId": 1
+            ])
         }
         
         XCTAssertEqual(response.response?.statusCode, 201)

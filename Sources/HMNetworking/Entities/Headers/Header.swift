@@ -8,18 +8,18 @@
 import Foundation
 import Alamofire
 
-struct Header: HttpHeaderType {
+public struct Header: HttpHeaderType {
     var header: HTTPHeader
     
-    init(_ header: HTTPHeader) {
+    public init(_ header: HTTPHeader) {
         self.header = header
     }
     
-    init(name: String, value: String) {
+    public init(name: String, value: String) {
         self.header = .init(name: name, value: value)
     }
     
-    func prepare(headers: HTTPHeaders) -> HTTPHeaders {
+    public func prepare(headers: HTTPHeaders) -> HTTPHeaders {
         var headers = headers
         headers.add(header)
         

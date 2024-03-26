@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-protocol HttpRequestPreference {
+public protocol HttpRequestPreference {
     func prepare(request: URLRequest) -> URLRequest
 }
 

@@ -1,5 +1,5 @@
 import XCTest
-@testable import HMNetworking
+import HMNetworking
 
 final class SimpleRequestsTests: XCTestCase {
     let client = HttpClient()

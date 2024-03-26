@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Parameter {
-    var name: String
-    var body: String        
+public struct Parameter {
+    public var name: String
+    public var body: String
+    
+    public init(name: String, body: String) {
+        self.name = name
+        self.body = body
+    }
 }

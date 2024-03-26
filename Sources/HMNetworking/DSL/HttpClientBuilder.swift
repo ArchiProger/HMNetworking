@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct HttpClientBuilder {
+public struct HttpClientBuilder {
     
 }

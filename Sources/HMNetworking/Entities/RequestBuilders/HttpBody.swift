@@ -8,14 +8,14 @@
 import Foundation
 import os.log
 
-struct HttpBody: HttpRequestPreference {
+public struct HttpBody: HttpRequestPreference {
     var data: Data?
     
-    init(data: Data) {
+    public init(data: Data) {
         self.data = data
     }
     
-    init(json: [String : Any]) {
+    public init(json: [String : Any]) {
         do {
             self.data = try JSONSerialization.data(withJSONObject: json)
         } catch {
@@ -27,7 +27,7 @@ struct HttpBody: HttpRequestPreference {
         }
     }
     
-    init<Data: Encodable>(encodable: Data) {
+    public init<Data: Encodable>(encodable: Data) {
         do {
             self.data = try JSONEncoder().encode(encodable)
         } catch {
@@ -39,7 +39,7 @@ struct HttpBody: HttpRequestPreference {
         }
     }
     
-    func prepare(request: URLRequest) -> URLRequest {
+    public func prepare(request: URLRequest) -> URLRequest {
         var request = request
         request.httpBody = data
         

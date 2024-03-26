@@ -8,8 +8,8 @@
 import Foundation
 
 @resultBuilder
-final class HttpPluginsBuilder {
-    static func buildBlock(_ components: PluginType...) -> [PluginType] {
+public final class HttpPluginsBuilder {
+    public static func buildBlock(_ components: PluginType...) -> [PluginType] {
         components
     }
 }

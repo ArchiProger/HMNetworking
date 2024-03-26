@@ -8,21 +8,33 @@
 import Foundation
 import Alamofire
 
-struct HttpClient {
+public struct HttpClient {
     var defaultRequest = DefaultRequest()
+    var defaultPlugins: [PluginType] = []
     
-    public init(@HttpDefaultRequestBuilder preferences: () -> [HttpDefaultRequestPreference] = { [] }) {
+    public init(
+        @HttpPluginsBuilder plugins: () -> [PluginType] = { [] },
+        @HttpDefaultRequestBuilder preferences: () -> [HttpDefaultRequestPreference]
+    ) {
         defaultRequest = defaultRequest.apply(preferences: preferences())
+        defaultPlugins = plugins()
     }
     
-    func request(_ convertible: URLConvertible,
+    public init(
+        @HttpPluginsBuilder plugins: () -> [PluginType] = { [] }
+    ) {
+        self.init(plugins: plugins, preferences: { })
+    }
+    
+    // MARK: - Basic requests
+    public func request(_ convertible: URLConvertible,
                  session: Session = AF,
                  @HttpPluginsBuilder plugins: () -> [PluginType] = { [] }
     ) async throws -> AFDataResponse<Data?> {
         try await request(convertible, session: session, plugins: plugins, preferences: { })
     }
     
-    func request(_ convertible: URLConvertible,
+    public func request(_ convertible: URLConvertible,
                  session: Session = AF,
                  @HttpPluginsBuilder plugins: () -> [PluginType] = { [] },
                  @HttpRequestBuilder preferences: () -> [HttpRequestPreference]
@@ -34,9 +46,13 @@ struct HttpClient {
         
         let handler = session.request(request)
         
-        let response = await handler
-            .apply(plugins: plugins())
-            .response()
+        let response = await withUnsafeContinuation { continuation in
+            handler
+                .apply(plugins: defaultPlugins + plugins())
+                .response { response in
+                    continuation.resume(returning: response)
+                }
+        }
         
         return try defaultRequest.responseHandler(response)
     }

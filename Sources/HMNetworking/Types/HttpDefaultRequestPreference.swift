@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol HttpDefaultRequestPreference {
+public protocol HttpDefaultRequestPreference {
     func prepare(request: DefaultRequest) -> DefaultRequest
 }

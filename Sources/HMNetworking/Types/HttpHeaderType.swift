@@ -8,6 +8,6 @@
 import Foundation
 import Alamofire
 
-protocol HttpHeaderType {
+public protocol HttpHeaderType {
     func prepare(headers: HTTPHeaders) -> HTTPHeaders
 }

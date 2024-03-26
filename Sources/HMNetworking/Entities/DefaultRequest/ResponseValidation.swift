@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct ResponseValidation: HttpDefaultRequestPreference {
+public struct ResponseValidation: HttpDefaultRequestPreference {
     var handler: ResponseHandler
     
-    init(handler: @escaping ResponseHandler) {
+    public init(handler: @escaping ResponseHandler) {
         self.handler = handler
     }
     
-    func prepare(request: DefaultRequest) -> DefaultRequest {
+    public func prepare(request: DefaultRequest) -> DefaultRequest {
         var request = request
         request.responseHandler = handler
         

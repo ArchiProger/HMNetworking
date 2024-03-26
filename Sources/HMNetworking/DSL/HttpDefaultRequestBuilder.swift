@@ -8,8 +8,8 @@
 import Foundation
 
 @resultBuilder
-final class HttpDefaultRequestBuilder {
-    static func buildBlock(_ components: HttpDefaultRequestPreference...) -> [HttpDefaultRequestPreference] {
+public final class HttpDefaultRequestBuilder {
+    public static func buildBlock(_ components: HttpDefaultRequestPreference...) -> [HttpDefaultRequestPreference] {
         components
     }    
 }

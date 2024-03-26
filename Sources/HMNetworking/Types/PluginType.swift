@@ -8,16 +8,16 @@
 import Foundation
 import Alamofire
 
-protocol PluginType {
-    func prepare(request: DataRequest) -> DataRequest
+public protocol PluginType {
+    func prepare<T: Request>(request: T) -> T
 }
 
-extension PluginType {
-    func prepare(request: DataRequest) -> DataRequest { request }
+public extension PluginType {
+    func prepare(request: Request) -> Request { request }
 }
 
 extension DataRequest {
-    func apply(plugins: [PluginType]) -> DataRequest {
+    func apply(plugins: [any PluginType]) -> DataRequest {
         var request: DataRequest = self
         plugins.forEach { plugin in
             request = plugin.prepare(request: request)

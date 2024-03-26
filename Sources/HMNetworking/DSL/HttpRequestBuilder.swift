@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 @resultBuilder
-final class HttpRequestBuilder {
-    static func buildBlock(_ components: HttpRequestPreference...) -> [HttpRequestPreference] {
+public final class HttpRequestBuilder {
+    public static func buildBlock(_ components: HttpRequestPreference...) -> [HttpRequestPreference] {
         components
     }
 }
