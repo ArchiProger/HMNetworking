@@ -12,6 +12,18 @@ public protocol HttpRequestPreference {
     func prepare(request: URLRequest) -> URLRequest
 }
 
+extension [HttpRequestPreference]: HttpRequestPreference {
+    public func prepare(request: URLRequest) -> URLRequest {
+        var request = request
+        
+        self.forEach { preference in
+            request = preference.prepare(request: request)
+        }
+        
+        return request
+    }
+}
+
 extension URLRequest {
     func apply(preferences: [HttpRequestPreference]) -> URLRequest {
         var request: URLRequest = self

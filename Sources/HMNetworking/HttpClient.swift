@@ -13,14 +13,20 @@ public struct HttpClient {
     var defaultRequest = DefaultRequest()
     var defaultPlugins: [PluginType] = []
     
+    public let plugins: [PluginType]
+    public let preferences: [HttpDefaultRequestPreference]
+    
+    // MARK: - Initializers
     public init(
         session: Session = AF,
         @HttpPluginsBuilder plugins: () -> [PluginType] = { [] },
         @HttpDefaultRequestBuilder preferences: () -> [HttpDefaultRequestPreference]
     ) {
+        self.plugins = plugins()
+        self.preferences = preferences()
         self.session = session
-        self.defaultRequest = defaultRequest.apply(preferences: preferences())
-        self.defaultPlugins = plugins()
+        self.defaultRequest = defaultRequest.apply(preferences: self.preferences)
+        self.defaultPlugins += self.plugins
     }
     
     public init(
@@ -29,14 +35,25 @@ public struct HttpClient {
     ) {
         self.init(session: session, plugins: plugins, preferences: { })
     }
+        
+    public func copy(@HttpDefaultRequestBuilder preferences: () -> [HttpDefaultRequestPreference]) -> HttpClient {
+        HttpClient {
+            self.plugins
+        } preferences: {
+            self.preferences
+            preferences()
+        }
+    }
     
     // MARK: - Basic requests
+    @discardableResult
     public func request(_ convertible: URLConvertible,
                         @HttpPluginsBuilder plugins: () -> [PluginType] = { [] }
     ) async throws -> AFDataResponse<Data?> {
         try await request(convertible, plugins: plugins, preferences: { })
     }
     
+    @discardableResult
     public func request(_ convertible: URLConvertible,
                         @HttpPluginsBuilder plugins: () -> [PluginType] = { [] },
                         @HttpRequestBuilder preferences: () -> [HttpRequestPreference]
@@ -60,6 +77,7 @@ public struct HttpClient {
     
     // MARK: - Uploading requests
     
+    @discardableResult
     public func upload(_ convertible: URLConvertible,
                        multipartFormData: @escaping (MultipartFormData) -> Void,
                        @HttpPluginsBuilder plugins: () -> [PluginType] = { [] }
@@ -67,6 +85,7 @@ public struct HttpClient {
         try await upload(convertible, multipartFormData: multipartFormData, plugins: plugins, preferences: { })
     }
     
+    @discardableResult
     public func upload(_ convertible: URLConvertible,
                        multipartFormData: @escaping (MultipartFormData) -> Void,
                        @HttpPluginsBuilder plugins: () -> [PluginType] = { [] },

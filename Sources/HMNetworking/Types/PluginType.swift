@@ -15,3 +15,15 @@ public protocol PluginType {
 public extension PluginType {
     func prepare(request: Request) -> Request { request }
 }
+
+extension [PluginType]: PluginType {
+    public func prepare<T>(request: T) -> T where T : Request {
+        var request = request
+        
+        self.forEach { plugin in
+            request = plugin.prepare(request: request)
+        }
+        
+        return request
+    }
+}

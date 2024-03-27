@@ -130,6 +130,10 @@
 		75BDC0DD2BB40DA300B47B78 /* os_log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC0DB2BB40DA300B47B78 /* os_log.swift */; };
 		75BDC0DE2BB40DA300B47B78 /* os_log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC0DB2BB40DA300B47B78 /* os_log.swift */; };
 		75BDC0DF2BB40DA300B47B78 /* os_log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC0DB2BB40DA300B47B78 /* os_log.swift */; };
+		75BDC1052BB49A8F00B47B78 /* UnitingClientsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC1042BB49A8F00B47B78 /* UnitingClientsTests.swift */; };
+		75BDC1062BB49A8F00B47B78 /* UnitingClientsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC1042BB49A8F00B47B78 /* UnitingClientsTests.swift */; };
+		75BDC1072BB49A8F00B47B78 /* UnitingClientsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC1042BB49A8F00B47B78 /* UnitingClientsTests.swift */; };
+		75BDC1082BB49A8F00B47B78 /* UnitingClientsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC1042BB49A8F00B47B78 /* UnitingClientsTests.swift */; };
 		98038DE1EF3189466595611D /* Pods_iOS_HMNetworking_iOS_Tests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE482B5964C52EF002FDC2B /* Pods_iOS_HMNetworking_iOS_Tests_iOS.framework */; };
 		BACFB48FD4EDCA94E49629DC /* Pods_WatchOS_HMNetworking_WatchOS_Tests_WatchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA0D0C901621EF80F3BDA9C /* Pods_WatchOS_HMNetworking_WatchOS_Tests_WatchOS.framework */; };
 		C0F3BC750E58B2DDF6CD373A /* Pods_iOS_HMNetworking_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ED8D27E6FBBBEC85D8A86F /* Pods_iOS_HMNetworking_iOS.framework */; };
@@ -253,6 +257,7 @@
 		75BDC0892BB3384200B47B78 /* HMNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HMNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BDC0962BB3384400B47B78 /* Tests tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BDC0DB2BB40DA300B47B78 /* os_log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = os_log.swift; sourceTree = "<group>"; };
+		75BDC1042BB49A8F00B47B78 /* UnitingClientsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitingClientsTests.swift; sourceTree = "<group>"; };
 		7D30BC9B1474C8F3AE1DDC04 /* Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig"; path = "Target Support Files/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig"; sourceTree = "<group>"; };
 		83E72CEDBDFB0BBB9C00135F /* Pods-MacOS-HMNetworking MacOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOS-HMNetworking MacOS.release.xcconfig"; path = "Target Support Files/Pods-MacOS-HMNetworking MacOS/Pods-MacOS-HMNetworking MacOS.release.xcconfig"; sourceTree = "<group>"; };
 		998C68D2CC68996BD09C000B /* Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig"; path = "Target Support Files/Pods-MacOS-HMNetworking MacOS-Tests MacOS/Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -394,6 +399,7 @@
 			children = (
 				75BDBF6B2BB3324600B47B78 /* SerializationTests.swift */,
 				75BDBF6C2BB3324600B47B78 /* SimpleRequestsTests.swift */,
+				75BDC1042BB49A8F00B47B78 /* UnitingClientsTests.swift */,
 			);
 			path = HMNetworkingTests;
 			sourceTree = "<group>";
@@ -1112,6 +1118,7 @@
 			files = (
 				75BDC0D02BB33C7500B47B78 /* SimpleRequestsTests.swift in Sources */,
 				75BDC0D12BB33C7500B47B78 /* SerializationTests.swift in Sources */,
+				75BDC1052BB49A8F00B47B78 /* UnitingClientsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1152,6 +1159,7 @@
 			files = (
 				75BDC0D22BB33C7600B47B78 /* SimpleRequestsTests.swift in Sources */,
 				75BDC0D32BB33C7600B47B78 /* SerializationTests.swift in Sources */,
+				75BDC1062BB49A8F00B47B78 /* UnitingClientsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1192,6 +1200,7 @@
 			files = (
 				75BDC0D42BB33C7700B47B78 /* SimpleRequestsTests.swift in Sources */,
 				75BDC0D52BB33C7700B47B78 /* SerializationTests.swift in Sources */,
+				75BDC1072BB49A8F00B47B78 /* UnitingClientsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1232,6 +1241,7 @@
 			files = (
 				75BDC0D62BB33C7800B47B78 /* SimpleRequestsTests.swift in Sources */,
 				75BDC0D72BB33C7800B47B78 /* SerializationTests.swift in Sources */,
+				75BDC1082BB49A8F00B47B78 /* UnitingClientsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
