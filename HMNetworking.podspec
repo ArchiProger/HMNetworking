@@ -9,12 +9,12 @@ Pod::Spec.new do |s|
   s.dependency 'Alamofire'
   s.source_files = 'Sources/**/*.{h,m,swift}'  
   s.source = { :git => 'https://github.com/ArchiProger/HMNetworking.git', :tag => '1.0.0' }
-  
-  s.ios.deployment_target = '10.0'
-  s.osx.deployment_target = '10.12'
-  s.tvos.deployment_target = '10.0'
-  s.visionos.deployment_target = '1.0'
-  s.watchos.deployment_target = '3.0'
 
+  s.swift_versions = ['5']
+  
+  s.ios.deployment_target = '13'
+  s.osx.deployment_target = '10.15'
+  s.tvos.deployment_target = '13'
+  s.watchos.deployment_target = '6'
 end
 
