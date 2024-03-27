@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import os.log
 
 public struct HttpBody: HttpRequestPreference {
     var data: Data?
@@ -19,11 +18,7 @@ public struct HttpBody: HttpRequestPreference {
         do {
             self.data = try JSONSerialization.data(withJSONObject: json)
         } catch {
-            if #available(macOS 11.0, *) {
-                os_log(.error, "\(error)")
-            } else {
-                print(error)
-            }
+            Logger.log(.error, error: error)
         }
     }
     
@@ -31,11 +26,7 @@ public struct HttpBody: HttpRequestPreference {
         do {
             self.data = try JSONEncoder().encode(encodable)
         } catch {
-            if #available(macOS 11.0, *) {
-                os_log(.error, "\(error)")
-            } else {
-                print(error)
-            }
+            Logger.log(.error, error: error)
         }
     }
     
