@@ -58,15 +58,17 @@ public struct HttpClient {
         return try defaultRequest.responseHandler(response)
     }
     
-    // MARK: - Download requests
+    // MARK: - Uploading requests
     
     public func upload(_ convertible: URLConvertible,
+                       multipartFormData: @escaping (MultipartFormData) -> Void,
                        @HttpPluginsBuilder plugins: () -> [PluginType] = { [] }
     ) async throws -> AFDataResponse<Data?> {
-        try await upload(convertible, plugins: plugins, preferences: { })
+        try await upload(convertible, multipartFormData: multipartFormData, plugins: plugins, preferences: { })
     }
     
     public func upload(_ convertible: URLConvertible,
+                       multipartFormData: @escaping (MultipartFormData) -> Void,
                        @HttpPluginsBuilder plugins: () -> [PluginType] = { [] },
                        @HttpRequestBuilder preferences: () -> [HttpRequestPreference]
     ) async throws -> AFDataResponse<Data?> {
@@ -74,9 +76,8 @@ public struct HttpClient {
         let url = defaultRequest.host + convertible
         let request = try URLRequest(url: url, method: .get, headers: defaultRequest.headers)
             .apply(preferences: preferences())
-        
-        let data = request.httpBody ?? Data()
-        let handler = session.upload(data, with: request)
+                
+        let handler = session.upload(multipartFormData: multipartFormData, with: request)
         let response = await withUnsafeContinuation { continuation in
             handler
                 .apply(plugins: defaultPlugins + plugins())
