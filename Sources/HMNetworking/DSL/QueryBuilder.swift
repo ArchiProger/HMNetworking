@@ -10,7 +10,13 @@ import Foundation
 @resultBuilder
 public final class QueryBuilder {
     public static func buildBlock(_ components: Parameter...) -> String {
-        let query = components.map { "\($0.name)=\($0.body)" }.joined(separator: "&")
+        let query = components
+            .compactMap { parameter in
+                guard let body = parameter.body else { return nil }
+                
+                return "\(parameter.name)=\(body)"
+            }
+            .joined(separator: "&")
         
         return components.isEmpty ? "" : "?" + query
     }
