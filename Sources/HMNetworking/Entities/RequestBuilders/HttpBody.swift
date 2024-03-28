@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Alamofire
 
 public struct HttpBody: HttpRequestPreference {
     var data: Data?
+    var header: HTTPHeader?
     
     public init(data: Data) {
         self.data = data
@@ -17,6 +19,7 @@ public struct HttpBody: HttpRequestPreference {
     public init(json: [String : Any]) {
         do {
             self.data = try JSONSerialization.data(withJSONObject: json)
+            self.header = .contentType("application/json")
         } catch {
             Logger.log(.error, error: error)
         }
@@ -25,6 +28,7 @@ public struct HttpBody: HttpRequestPreference {
     public init<Data: Encodable>(encodable: Data) {
         do {
             self.data = try JSONEncoder().encode(encodable)
+            self.header = .contentType("application/json")
         } catch {
             Logger.log(.error, error: error)
         }
@@ -33,6 +37,10 @@ public struct HttpBody: HttpRequestPreference {
     public func prepare(request: URLRequest) -> URLRequest {
         var request = request
         request.httpBody = data
+        
+        if let header = header {
+            request.headers.add(header)
+        }
         
         return request
     }

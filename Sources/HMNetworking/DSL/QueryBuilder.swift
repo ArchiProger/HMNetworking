@@ -9,15 +9,23 @@ import Foundation
 
 @resultBuilder
 public final class QueryBuilder {
-    public static func buildBlock(_ components: Parameter...) -> String {
-        let query = components
-            .compactMap { parameter in
-                guard let body = parameter.body else { return nil }
-                
-                return "\(parameter.name)=\(body)"
-            }
-            .joined(separator: "&")
-        
-        return components.isEmpty ? "" : "?" + query
+    public static func buildBlock(_ components: [Parameter]...) -> [Parameter] {
+        components.flatMap { $0 }
+    }        
+    
+    public static func buildExpression(_ expression: Parameter) -> [Parameter] {
+        [expression]
+    }
+    
+    public static func buildEither(first component: [Parameter]) -> [Parameter] {
+        component
+    }
+    
+    public static func buildEither(second component: [Parameter]) -> [Parameter] {
+        component
+    }
+    
+    public static func buildOptional(_ component: [Parameter]?) -> [Parameter] {
+        component ?? []
     }
 }

@@ -9,15 +9,15 @@ import Foundation
 import Alamofire
 
 public struct Query: HttpRequestPreference {
-    var url: String
+    var query: String
     
-    public init(@QueryBuilder parameters: () -> String) {
-        self.url = parameters()
+    public init(@QueryBuilder parameters: () -> [Parameter]) {
+        self.query = parameters().query
     }
     
     public func prepare(request: URLRequest) -> URLRequest {
         let base = request.url?.absoluteString ?? ""
-        let url = base + url
+        let url = base + query
         
         var request = request
         request.url = .init(string: url)

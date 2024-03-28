@@ -16,3 +16,17 @@ public struct Parameter {
         self.body = body
     }
 }
+
+extension [Parameter] {
+    var query: String {
+        let query = self
+            .compactMap { parameter in
+                guard let body = parameter.body else { return nil }
+                
+                return "\(parameter.name)=\(body)"
+            }
+            .joined(separator: "&")
+        
+        return self.isEmpty ? "" : "?" + query
+    }
+}
