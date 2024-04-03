@@ -11,6 +11,14 @@
 		37ED8BB92A6493E261F32ADB /* Pods_tvOS_HMNetworking_tvOS_Tests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121AE4ACD52739E281351CED /* Pods_tvOS_HMNetworking_tvOS_Tests_tvOS.framework */; };
 		53313F92CE297552C3F3874E /* Pods_tvOS_HMNetworking_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FA2C8D674513158FBF4B66 /* Pods_tvOS_HMNetworking_tvOS.framework */; };
 		5D2E3CB90353813249D5B134 /* Pods_MacOS_HMNetworking_MacOS_Tests_MacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89C55AE4E01EDA2165160FF /* Pods_MacOS_HMNetworking_MacOS_Tests_MacOS.framework */; };
+		75A23B252BBDA12F00AAF2F6 /* Prepare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A23B242BBDA12F00AAF2F6 /* Prepare.swift */; };
+		75A23B262BBDA12F00AAF2F6 /* Prepare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A23B242BBDA12F00AAF2F6 /* Prepare.swift */; };
+		75A23B272BBDA12F00AAF2F6 /* Prepare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A23B242BBDA12F00AAF2F6 /* Prepare.swift */; };
+		75A23B282BBDA12F00AAF2F6 /* Prepare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A23B242BBDA12F00AAF2F6 /* Prepare.swift */; };
+		75A23B2A2BBDA29E00AAF2F6 /* PrepareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A23B292BBDA29E00AAF2F6 /* PrepareTests.swift */; };
+		75A23B2B2BBDA29E00AAF2F6 /* PrepareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A23B292BBDA29E00AAF2F6 /* PrepareTests.swift */; };
+		75A23B2C2BBDA29E00AAF2F6 /* PrepareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A23B292BBDA29E00AAF2F6 /* PrepareTests.swift */; };
+		75A23B2D2BBDA29E00AAF2F6 /* PrepareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A23B292BBDA29E00AAF2F6 /* PrepareTests.swift */; };
 		75BDBF872BB3324600B47B78 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 75BDBF6A2BB3324600B47B78 /* LICENSE */; };
 		75BDBF8A2BB3324600B47B78 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 75BDBF6F2BB3324600B47B78 /* README.md */; };
 		75BDBFBB2BB333AF00B47B78 /* HttpDefaultRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDBF9A2BB333AF00B47B78 /* HttpDefaultRequestBuilder.swift */; };
@@ -134,6 +142,10 @@
 		75BDC10B2BB54D8900B47B78 /* ConditionRequestBuildersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC1092BB54D8900B47B78 /* ConditionRequestBuildersTests.swift */; };
 		75BDC10C2BB54D8900B47B78 /* ConditionRequestBuildersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC1092BB54D8900B47B78 /* ConditionRequestBuildersTests.swift */; };
 		75BDC10D2BB54D8900B47B78 /* ConditionRequestBuildersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC1092BB54D8900B47B78 /* ConditionRequestBuildersTests.swift */; };
+		75BDC10F2BB55DB200B47B78 /* HttpRequestRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC10E2BB55DB200B47B78 /* HttpRequestRetry.swift */; };
+		75BDC1102BB55DB200B47B78 /* HttpRequestRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC10E2BB55DB200B47B78 /* HttpRequestRetry.swift */; };
+		75BDC1112BB55DB200B47B78 /* HttpRequestRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC10E2BB55DB200B47B78 /* HttpRequestRetry.swift */; };
+		75BDC1122BB55DB200B47B78 /* HttpRequestRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC10E2BB55DB200B47B78 /* HttpRequestRetry.swift */; };
 		98038DE1EF3189466595611D /* Pods_iOS_HMNetworking_iOS_Tests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE482B5964C52EF002FDC2B /* Pods_iOS_HMNetworking_iOS_Tests_iOS.framework */; };
 		BACFB48FD4EDCA94E49629DC /* Pods_WatchOS_HMNetworking_WatchOS_Tests_WatchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA0D0C901621EF80F3BDA9C /* Pods_WatchOS_HMNetworking_WatchOS_Tests_WatchOS.framework */; };
 		C0F3BC750E58B2DDF6CD373A /* Pods_iOS_HMNetworking_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ED8D27E6FBBBEC85D8A86F /* Pods_iOS_HMNetworking_iOS.framework */; };
@@ -221,6 +233,8 @@
 		59E58BD69BF2C851BD6B5BEB /* Pods-iOS-HMNetworking iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-HMNetworking iOS.debug.xcconfig"; path = "Target Support Files/Pods-iOS-HMNetworking iOS/Pods-iOS-HMNetworking iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5DB70DC3F0C7C9A6DFE7A2C2 /* Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.debug.xcconfig"; path = "Target Support Files/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		662A84E4B18332F5761D55E9 /* Pods-tvOS-HMNetworking tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS-HMNetworking tvOS.debug.xcconfig"; path = "Target Support Files/Pods-tvOS-HMNetworking tvOS/Pods-tvOS-HMNetworking tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		75A23B242BBDA12F00AAF2F6 /* Prepare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prepare.swift; sourceTree = "<group>"; };
+		75A23B292BBDA29E00AAF2F6 /* PrepareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareTests.swift; sourceTree = "<group>"; };
 		75BDBF3D2BB3320B00B47B78 /* HMNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HMNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BDBF6A2BB3324600B47B78 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		75BDBF6B2BB3324600B47B78 /* SerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationTests.swift; sourceTree = "<group>"; };
@@ -258,6 +272,7 @@
 		75BDC0DB2BB40DA300B47B78 /* os_log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = os_log.swift; sourceTree = "<group>"; };
 		75BDC1042BB49A8F00B47B78 /* UnitingClientsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitingClientsTests.swift; sourceTree = "<group>"; };
 		75BDC1092BB54D8900B47B78 /* ConditionRequestBuildersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionRequestBuildersTests.swift; sourceTree = "<group>"; };
+		75BDC10E2BB55DB200B47B78 /* HttpRequestRetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestRetry.swift; sourceTree = "<group>"; };
 		7D30BC9B1474C8F3AE1DDC04 /* Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig"; path = "Target Support Files/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig"; sourceTree = "<group>"; };
 		83E72CEDBDFB0BBB9C00135F /* Pods-MacOS-HMNetworking MacOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOS-HMNetworking MacOS.release.xcconfig"; path = "Target Support Files/Pods-MacOS-HMNetworking MacOS/Pods-MacOS-HMNetworking MacOS.release.xcconfig"; sourceTree = "<group>"; };
 		998C68D2CC68996BD09C000B /* Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig"; path = "Target Support Files/Pods-MacOS-HMNetworking MacOS-Tests MacOS/Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -401,6 +416,7 @@
 				75BDBF6C2BB3324600B47B78 /* SimpleRequestsTests.swift */,
 				75BDC1042BB49A8F00B47B78 /* UnitingClientsTests.swift */,
 				75BDC1092BB54D8900B47B78 /* ConditionRequestBuildersTests.swift */,
+				75A23B292BBDA29E00AAF2F6 /* PrepareTests.swift */,
 			);
 			path = HMNetworkingTests;
 			sourceTree = "<group>";
@@ -431,6 +447,8 @@
 				75BDBFA02BB333AF00B47B78 /* DefaultRequest.swift */,
 				75BDBFA12BB333AF00B47B78 /* Host.swift */,
 				75BDBFA22BB333AF00B47B78 /* ResponseValidation.swift */,
+				75BDC10E2BB55DB200B47B78 /* HttpRequestRetry.swift */,
+				75A23B242BBDA12F00AAF2F6 /* Prepare.swift */,
 			);
 			path = DefaultRequest;
 			sourceTree = "<group>";
@@ -1093,6 +1111,7 @@
 				75BDBFBD2BB333AF00B47B78 /* HttpPluginsBuilder.swift in Sources */,
 				75BDBFCD2BB333AF00B47B78 /* HttpHeaderType.swift in Sources */,
 				75BDBFBE2BB333AF00B47B78 /* HttpRequestBuilder.swift in Sources */,
+				75BDC10F2BB55DB200B47B78 /* HttpRequestRetry.swift in Sources */,
 				75BDBFC42BB333AF00B47B78 /* HttpBody.swift in Sources */,
 				75BDBFC82BB333AF00B47B78 /* Parameter.swift in Sources */,
 				75BDC0DC2BB40DA300B47B78 /* os_log.swift in Sources */,
@@ -1107,6 +1126,7 @@
 				75BDBFBB2BB333AF00B47B78 /* HttpDefaultRequestBuilder.swift in Sources */,
 				75BDBFC02BB333AF00B47B78 /* DefaultRequest.swift in Sources */,
 				75BDBFCF2BB333AF00B47B78 /* PluginType.swift in Sources */,
+				75A23B252BBDA12F00AAF2F6 /* Prepare.swift in Sources */,
 				75BDBFC92BB333AF00B47B78 /* AFDataResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1118,6 +1138,7 @@
 				75BDC0D02BB33C7500B47B78 /* SimpleRequestsTests.swift in Sources */,
 				75BDC0D12BB33C7500B47B78 /* SerializationTests.swift in Sources */,
 				75BDC1052BB49A8F00B47B78 /* UnitingClientsTests.swift in Sources */,
+				75A23B2A2BBDA29E00AAF2F6 /* PrepareTests.swift in Sources */,
 				75BDC10A2BB54D8900B47B78 /* ConditionRequestBuildersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1134,6 +1155,7 @@
 				75BDC00B2BB3376600B47B78 /* HttpPluginsBuilder.swift in Sources */,
 				75BDC00C2BB3376600B47B78 /* HttpHeaderType.swift in Sources */,
 				75BDC00D2BB3376600B47B78 /* HttpRequestBuilder.swift in Sources */,
+				75BDC1102BB55DB200B47B78 /* HttpRequestRetry.swift in Sources */,
 				75BDC00E2BB3376600B47B78 /* HttpBody.swift in Sources */,
 				75BDC00F2BB3376600B47B78 /* Parameter.swift in Sources */,
 				75BDC0DD2BB40DA300B47B78 /* os_log.swift in Sources */,
@@ -1148,6 +1170,7 @@
 				75BDC0192BB3376600B47B78 /* HttpDefaultRequestBuilder.swift in Sources */,
 				75BDC01A2BB3376600B47B78 /* DefaultRequest.swift in Sources */,
 				75BDC01B2BB3376600B47B78 /* PluginType.swift in Sources */,
+				75A23B262BBDA12F00AAF2F6 /* Prepare.swift in Sources */,
 				75BDC01C2BB3376600B47B78 /* AFDataResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1159,6 +1182,7 @@
 				75BDC0D22BB33C7600B47B78 /* SimpleRequestsTests.swift in Sources */,
 				75BDC0D32BB33C7600B47B78 /* SerializationTests.swift in Sources */,
 				75BDC1062BB49A8F00B47B78 /* UnitingClientsTests.swift in Sources */,
+				75A23B2B2BBDA29E00AAF2F6 /* PrepareTests.swift in Sources */,
 				75BDC10B2BB54D8900B47B78 /* ConditionRequestBuildersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1175,6 +1199,7 @@
 				75BDC0382BB337A800B47B78 /* HttpPluginsBuilder.swift in Sources */,
 				75BDC0392BB337A800B47B78 /* HttpHeaderType.swift in Sources */,
 				75BDC03A2BB337A800B47B78 /* HttpRequestBuilder.swift in Sources */,
+				75BDC1112BB55DB200B47B78 /* HttpRequestRetry.swift in Sources */,
 				75BDC03B2BB337A800B47B78 /* HttpBody.swift in Sources */,
 				75BDC03C2BB337A800B47B78 /* Parameter.swift in Sources */,
 				75BDC0DE2BB40DA300B47B78 /* os_log.swift in Sources */,
@@ -1189,6 +1214,7 @@
 				75BDC0462BB337A800B47B78 /* HttpDefaultRequestBuilder.swift in Sources */,
 				75BDC0472BB337A800B47B78 /* DefaultRequest.swift in Sources */,
 				75BDC0482BB337A800B47B78 /* PluginType.swift in Sources */,
+				75A23B272BBDA12F00AAF2F6 /* Prepare.swift in Sources */,
 				75BDC0492BB337A800B47B78 /* AFDataResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1200,6 +1226,7 @@
 				75BDC0D42BB33C7700B47B78 /* SimpleRequestsTests.swift in Sources */,
 				75BDC0D52BB33C7700B47B78 /* SerializationTests.swift in Sources */,
 				75BDC1072BB49A8F00B47B78 /* UnitingClientsTests.swift in Sources */,
+				75A23B2C2BBDA29E00AAF2F6 /* PrepareTests.swift in Sources */,
 				75BDC10C2BB54D8900B47B78 /* ConditionRequestBuildersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1216,6 +1243,7 @@
 				75BDC0702BB3384200B47B78 /* HttpPluginsBuilder.swift in Sources */,
 				75BDC0712BB3384200B47B78 /* HttpHeaderType.swift in Sources */,
 				75BDC0722BB3384200B47B78 /* HttpRequestBuilder.swift in Sources */,
+				75BDC1122BB55DB200B47B78 /* HttpRequestRetry.swift in Sources */,
 				75BDC0732BB3384200B47B78 /* HttpBody.swift in Sources */,
 				75BDC0742BB3384200B47B78 /* Parameter.swift in Sources */,
 				75BDC0DF2BB40DA300B47B78 /* os_log.swift in Sources */,
@@ -1230,6 +1258,7 @@
 				75BDC07E2BB3384200B47B78 /* HttpDefaultRequestBuilder.swift in Sources */,
 				75BDC07F2BB3384200B47B78 /* DefaultRequest.swift in Sources */,
 				75BDC0802BB3384200B47B78 /* PluginType.swift in Sources */,
+				75A23B282BBDA12F00AAF2F6 /* Prepare.swift in Sources */,
 				75BDC0812BB3384200B47B78 /* AFDataResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1241,6 +1270,7 @@
 				75BDC0D62BB33C7800B47B78 /* SimpleRequestsTests.swift in Sources */,
 				75BDC0D72BB33C7800B47B78 /* SerializationTests.swift in Sources */,
 				75BDC1082BB49A8F00B47B78 /* UnitingClientsTests.swift in Sources */,
+				75A23B2D2BBDA29E00AAF2F6 /* PrepareTests.swift in Sources */,
 				75BDC10D2BB54D8900B47B78 /* ConditionRequestBuildersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1307,6 +1337,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1371,6 +1402,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1398,8 +1430,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1442,8 +1476,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1486,6 +1522,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1508,6 +1545,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1530,8 +1568,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1573,8 +1613,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1616,6 +1658,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1638,6 +1681,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1660,8 +1704,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1705,8 +1751,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1750,6 +1798,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1773,6 +1822,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1796,8 +1846,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1841,8 +1893,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1886,6 +1940,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1909,6 +1964,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = H4S5B9F55T;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;

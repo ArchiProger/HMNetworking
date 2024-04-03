@@ -60,7 +60,7 @@ public struct HttpClient {
     ) async throws -> AFDataResponse<Data?> {
         
         let url = defaultRequest.host + convertible
-        let request = try URLRequest(url: url, method: .get, headers: defaultRequest.headers)
+        let request = try defaultRequest.prepare(URLRequest(url: url, method: .get, headers: defaultRequest.headers))
             .apply(preferences: preferences())
         
         let handler = session.request(request)
@@ -93,7 +93,7 @@ public struct HttpClient {
     ) async throws -> AFDataResponse<Data?> {
         
         let url = defaultRequest.host + convertible
-        let request = try URLRequest(url: url, method: .get, headers: defaultRequest.headers)
+        let request = try defaultRequest.prepare(URLRequest(url: url, method: .get, headers: defaultRequest.headers))
             .apply(preferences: preferences())
                 
         let handler = session.upload(multipartFormData: multipartFormData, with: request)

@@ -9,11 +9,13 @@ import Foundation
 import Alamofire
 
 public typealias ResponseHandler = (AFDataResponse<Data?>) throws -> AFDataResponse<Data?>
+public typealias PreparePerform = (URLRequest) throws -> URLRequest
 
 public struct DefaultRequest {
     public var host: URLConvertible = ""
     public var headers: HTTPHeaders = []
     public var responseHandler: ResponseHandler = { $0 }    
+    public var prepare: PreparePerform = { $0 }
 }
 
 extension DefaultRequest {
