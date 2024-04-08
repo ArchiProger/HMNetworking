@@ -11,6 +11,10 @@
 		37ED8BB92A6493E261F32ADB /* Pods_tvOS_HMNetworking_tvOS_Tests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121AE4ACD52739E281351CED /* Pods_tvOS_HMNetworking_tvOS_Tests_tvOS.framework */; };
 		53313F92CE297552C3F3874E /* Pods_tvOS_HMNetworking_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FA2C8D674513158FBF4B66 /* Pods_tvOS_HMNetworking_tvOS.framework */; };
 		5D2E3CB90353813249D5B134 /* Pods_MacOS_HMNetworking_MacOS_Tests_MacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89C55AE4E01EDA2165160FF /* Pods_MacOS_HMNetworking_MacOS_Tests_MacOS.framework */; };
+		753239282BC3E66C00D830ED /* HMNetworking.docc in Sources */ = {isa = PBXBuildFile; fileRef = 753239272BC3E66C00D830ED /* HMNetworking.docc */; };
+		753239292BC3E66C00D830ED /* HMNetworking.docc in Sources */ = {isa = PBXBuildFile; fileRef = 753239272BC3E66C00D830ED /* HMNetworking.docc */; };
+		7532392A2BC3E66C00D830ED /* HMNetworking.docc in Sources */ = {isa = PBXBuildFile; fileRef = 753239272BC3E66C00D830ED /* HMNetworking.docc */; };
+		7532392B2BC3E66C00D830ED /* HMNetworking.docc in Sources */ = {isa = PBXBuildFile; fileRef = 753239272BC3E66C00D830ED /* HMNetworking.docc */; };
 		75A23B252BBDA12F00AAF2F6 /* Prepare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A23B242BBDA12F00AAF2F6 /* Prepare.swift */; };
 		75A23B262BBDA12F00AAF2F6 /* Prepare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A23B242BBDA12F00AAF2F6 /* Prepare.swift */; };
 		75A23B272BBDA12F00AAF2F6 /* Prepare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A23B242BBDA12F00AAF2F6 /* Prepare.swift */; };
@@ -233,6 +237,7 @@
 		59E58BD69BF2C851BD6B5BEB /* Pods-iOS-HMNetworking iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-HMNetworking iOS.debug.xcconfig"; path = "Target Support Files/Pods-iOS-HMNetworking iOS/Pods-iOS-HMNetworking iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5DB70DC3F0C7C9A6DFE7A2C2 /* Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.debug.xcconfig"; path = "Target Support Files/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		662A84E4B18332F5761D55E9 /* Pods-tvOS-HMNetworking tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS-HMNetworking tvOS.debug.xcconfig"; path = "Target Support Files/Pods-tvOS-HMNetworking tvOS/Pods-tvOS-HMNetworking tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		753239272BC3E66C00D830ED /* HMNetworking.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = HMNetworking.docc; sourceTree = "<group>"; };
 		75A23B242BBDA12F00AAF2F6 /* Prepare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prepare.swift; sourceTree = "<group>"; };
 		75A23B292BBDA29E00AAF2F6 /* PrepareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareTests.swift; sourceTree = "<group>"; };
 		75BDBF3D2BB3320B00B47B78 /* HMNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HMNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -528,6 +533,7 @@
 		75BDBFB92BB333AF00B47B78 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				753239272BC3E66C00D830ED /* HMNetworking.docc */,
 				75BDBFB82BB333AF00B47B78 /* HMNetworking */,
 			);
 			path = Sources;
@@ -1116,6 +1122,7 @@
 				75BDBFC82BB333AF00B47B78 /* Parameter.swift in Sources */,
 				75BDC0DC2BB40DA300B47B78 /* os_log.swift in Sources */,
 				75BDBFCA2BB333AF00B47B78 /* Request.swift in Sources */,
+				753239282BC3E66C00D830ED /* HMNetworking.docc in Sources */,
 				75BDBFC12BB333AF00B47B78 /* Host.swift in Sources */,
 				75BDBFC72BB333AF00B47B78 /* Query.swift in Sources */,
 				75BDBFCE2BB333AF00B47B78 /* HttpRequestPreference.swift in Sources */,
@@ -1160,6 +1167,7 @@
 				75BDC00F2BB3376600B47B78 /* Parameter.swift in Sources */,
 				75BDC0DD2BB40DA300B47B78 /* os_log.swift in Sources */,
 				75BDC0102BB3376600B47B78 /* Request.swift in Sources */,
+				753239292BC3E66C00D830ED /* HMNetworking.docc in Sources */,
 				75BDC0112BB3376600B47B78 /* Host.swift in Sources */,
 				75BDC0132BB3376600B47B78 /* Query.swift in Sources */,
 				75BDC0142BB3376600B47B78 /* HttpRequestPreference.swift in Sources */,
@@ -1204,6 +1212,7 @@
 				75BDC03C2BB337A800B47B78 /* Parameter.swift in Sources */,
 				75BDC0DE2BB40DA300B47B78 /* os_log.swift in Sources */,
 				75BDC03D2BB337A800B47B78 /* Request.swift in Sources */,
+				7532392A2BC3E66C00D830ED /* HMNetworking.docc in Sources */,
 				75BDC03E2BB337A800B47B78 /* Host.swift in Sources */,
 				75BDC0402BB337A800B47B78 /* Query.swift in Sources */,
 				75BDC0412BB337A800B47B78 /* HttpRequestPreference.swift in Sources */,
@@ -1248,6 +1257,7 @@
 				75BDC0742BB3384200B47B78 /* Parameter.swift in Sources */,
 				75BDC0DF2BB40DA300B47B78 /* os_log.swift in Sources */,
 				75BDC0752BB3384200B47B78 /* Request.swift in Sources */,
+				7532392B2BC3E66C00D830ED /* HMNetworking.docc in Sources */,
 				75BDC0762BB3384200B47B78 /* Host.swift in Sources */,
 				75BDC0782BB3384200B47B78 /* Query.swift in Sources */,
 				75BDC0792BB3384200B47B78 /* HttpRequestPreference.swift in Sources */,
