@@ -10,10 +10,12 @@ import Alamofire
 
 public protocol PluginType {
     func prepare<T: Request>(request: T) -> T
+    func process(response: AFDataResponse<Data?>) async throws -> AFDataResponse<Data?>
 }
 
 public extension PluginType {
     func prepare(request: Request) -> Request { request }
+    func process(response: AFDataResponse<Data?>) async throws -> AFDataResponse<Data?> { response }
 }
 
 extension [PluginType]: PluginType {

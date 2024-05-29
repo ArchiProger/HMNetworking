@@ -81,14 +81,9 @@ public struct HttpClient {
         let request = try defaultRequest.prepare(URLRequest(url: url, method: .get, headers: defaultRequest.headers))
             .apply(preferences: preferences())
         
+        let plugins = defaultPlugins + plugins()
         let handler = session.request(request)
-        let response = await withUnsafeContinuation { continuation in
-            handler
-                .apply(plugins: defaultPlugins + plugins())
-                .response { response in
-                    continuation.resume(returning: response)
-                }
-        }
+        let response = try await handler.response(with: plugins)
         
         return try defaultRequest.responseHandler(response)
     }
