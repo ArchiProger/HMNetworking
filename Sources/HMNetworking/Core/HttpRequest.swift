@@ -9,14 +9,14 @@ import Foundation
 import Alamofire
 
 public typealias PreparePerform = (HttpRequest) throws -> HttpRequest
-public typealias ResponseHandler = (HttpResponse) throws -> HttpResponse
+public typealias ResponseValidator = (HttpResponse) async throws -> HttpResponse
 
 @dynamicMemberLookup
 public struct HttpRequest {
     var urlRequest: URLRequest
     var credential: URLCredential?
     var prepare: PreparePerform = { $0 }
-    var validator: ResponseHandler = { $0 }
+    var validators: [ResponseValidator] = []
     var session: Session
     
     init(_ url: URLConvertible, session: Session = AF) throws {
@@ -67,7 +67,12 @@ public extension HttpRequest {
                     }
             }
             
-            return try validator(.init(from: response, with: self))
+            var result = HttpResponse(from: response, with: self)
+            for validator in validators {
+                result = try await validator(result)
+            }
+            
+            return result
         }
     }
 }

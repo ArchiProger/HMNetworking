@@ -27,25 +27,31 @@ import Alamofire
 /// }
 /// ```
 public struct HttpClient {
-    var defaultRequest: HttpRequest
+    var preferences: [HttpClientConfig]
     
-    public init(@HttpClientConfigBuilder preferences: () -> [HttpClientConfig]) {
-        self.defaultRequest = preferences().request()
-    }
-    
-    public init() {
-        self.defaultRequest = .empty
+    public init(@HttpClientConfigBuilder preferences: () -> [HttpClientConfig] = { [] }) {
+        self.preferences = preferences()
     }
 }
 
 // MARK: - Public methods
 public extension HttpClient {
+    func copy(
+        @HttpClientConfigBuilder preferences: () -> [HttpClientConfig] = { [] }
+    ) -> HttpClient {
+        var client = self
+        client.preferences += preferences()
+        
+        return client
+    }
+    
     func request(
-        _ url: URLConvertible,
-        @HttpClientConfigBuilder preferences: () -> [HttpClientConfig]
-    ) throws -> HttpRequest {
-        let component = try url.asURL()
-        let url: URL = if let url = defaultRequest.url {
+        _ convertible: URLConvertible,
+        @HttpClientConfigBuilder preferences: () -> [HttpClientConfig] = { [] }
+    ) async throws -> HttpResponse {
+        let defaultRequest = self.preferences.request()
+        let component = try convertible.asURL()
+        let url = if let url = defaultRequest.url {
             url.appendingPathComponent(component.absoluteString)
         } else {
             component
@@ -54,6 +60,8 @@ public extension HttpClient {
         var request = defaultRequest
         request.url = url
         
-        return preferences().request(initial: defaultRequest)
+        return try await preferences()
+            .request(initial: request)
+            .response
     }
 }

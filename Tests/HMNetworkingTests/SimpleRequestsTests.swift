@@ -7,7 +7,7 @@ final class SimpleRequestsTests: XCTestCase {
     func testRequest() async throws {
         let response = try await client.request("https://jsonplaceholder.typicode.com")
         
-        XCTAssertEqual(response.response?.statusCode, 200)
+        XCTAssertEqual(response.statusCode, 200)
     }
     
     func testQuery() async throws {
@@ -17,6 +17,6 @@ final class SimpleRequestsTests: XCTestCase {
             }
         }
         
-        XCTAssertEqual(response.response?.statusCode, 200)
+        XCTAssertEqual(response.statusCode, 200)
     }
 }

@@ -28,9 +28,7 @@ final class SerializationTests: XCTestCase {
         }
         
         ResponseValidation { response in
-            guard let code = response.response?.statusCode else { throw "Failed to get the error code" }
-            
-            guard (200...299).contains(code) else { throw "Unsuccessful error status" }
+            guard (200...299).contains(response.statusCode) else { throw "Unsuccessful error status" }
             
             return response
         }
@@ -44,7 +42,7 @@ final class SerializationTests: XCTestCase {
             HttpBody(data: data)
         }
         
-        XCTAssertEqual(response.response?.statusCode, 201)
+        XCTAssertEqual(response.statusCode, 201)
     }
     
     func testJSONSerialization() async throws {
@@ -57,7 +55,7 @@ final class SerializationTests: XCTestCase {
             ])
         }
         
-        XCTAssertEqual(response.response?.statusCode, 201)
+        XCTAssertEqual(response.statusCode, 201)
     }
     
     func testEncodableSerialization() async throws {
@@ -66,7 +64,7 @@ final class SerializationTests: XCTestCase {
             HttpBody(encodable: self.post)
         }
         
-        XCTAssertEqual(response.response?.statusCode, 201)
+        XCTAssertEqual(response.statusCode, 201)
     }
     
     func testDeserialization() async throws {
@@ -77,7 +75,7 @@ final class SerializationTests: XCTestCase {
         
         let post: PostDTO = try response.body()
         
-        XCTAssertEqual(response.response?.statusCode, 201)
+        XCTAssertEqual(response.statusCode, 201)
         XCTAssertNotNil(post.id)
     }
 }

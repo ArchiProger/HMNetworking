@@ -29,7 +29,7 @@ final class UnitingClientsTests: XCTestCase {
             HttpMethod(.post)
         }
         
-        XCTAssertEqual(response.request?.url?.absoluteString, "https://jsonplaceholder.typicode.com/posts")
+        XCTAssertEqual(response.request.url?.absoluteString, "https://jsonplaceholder.typicode.com/posts")
     }
     
     func testHeaders() async throws {
@@ -37,9 +37,9 @@ final class UnitingClientsTests: XCTestCase {
             HttpMethod(.post)
         }
         
-        let headers = response.request?.headers
+        let headers = response.request.headers
                                 
-        XCTAssertTrue(headers?.contains(.defaultUserAgent) ?? false)
-        XCTAssertTrue(headers?.contains(.contentType("application/json; charset=UTF-8")) ?? false)
+        XCTAssertTrue(headers.contains(.defaultUserAgent))
+        XCTAssertTrue(headers.contains(.contentType("application/json; charset=UTF-8")))
     }
 }

@@ -8,15 +8,13 @@
 import Foundation
 
 public struct ResponseValidation: HttpClientConfig {
-    var handler: ResponseHandler
+    var handler: ResponseValidator
     
-    public init(handler: @escaping ResponseHandler) {
+    public init(handler: @escaping ResponseValidator) {
         self.handler = handler
     }
     
-    public func prepare(request: HttpRequest) -> HttpRequest {
-        var request = request
-        
-        return request
+    public func process(response: HttpResponse) async throws -> HttpResponse {
+        try await handler(response)
     }
 }
