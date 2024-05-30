@@ -48,7 +48,7 @@ public extension HttpRequest {
                     }
             }
             
-            return try .init(from: response)
+            return try .init(from: response, with: self)
         }
     }
 }

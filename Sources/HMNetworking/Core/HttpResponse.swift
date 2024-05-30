@@ -10,7 +10,7 @@ import Alamofire
 
 public struct HttpResponse {
     /// The URL request sent to the server.
-    public let request: URLRequest?
+    public let request: HttpRequest
 
     /// The server's response to the URL request.
     public let statusCode: Int
@@ -27,10 +27,10 @@ public struct HttpResponse {
     /// The time taken to serialize the response.
     public let serializationDuration: TimeInterval
     
-    public init(from response: AFDataResponse<Data?>) throws {
+    public init(from response: AFDataResponse<Data?>, with request: HttpRequest) throws {
         let data = try response.result.get()
         
-        self.request = response.request
+        self.request = request
         self.statusCode = response.response?.statusCode ?? 200
         self.data = data ?? Data()
         self.metrics = response.metrics
