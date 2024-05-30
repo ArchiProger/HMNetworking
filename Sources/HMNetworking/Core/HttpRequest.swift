@@ -8,10 +8,15 @@
 import Foundation
 import Alamofire
 
+public typealias PreparePerform = (HttpRequest) throws -> HttpRequest
+public typealias ResponseHandler = (HttpResponse) throws -> HttpResponse
+
 @dynamicMemberLookup
 public struct HttpRequest {
     var urlRequest: URLRequest
     var credential: URLCredential?
+    var prepare: PreparePerform = { $0 }
+    var validator: ResponseHandler = { $0 }
     var session: Session
     
     init(_ url: URLConvertible, session: Session = AF) throws {
@@ -20,12 +25,25 @@ public struct HttpRequest {
     }
     
     var request: DataRequest {
-        let result = session.request(urlRequest)
-        
-        guard let credential else { return result }
-        
-        return result.authenticate(with: credential)
+        get throws {
+            let request = try prepare(self)
+            let result = session.request(request.urlRequest)
+            
+            guard let credential else { return result }
+            
+            return result.authenticate(with: credential)
+        }
     }
+}
+
+// MARK: - Empty request
+public extension HttpRequest {
+    static let empty: HttpRequest = {
+        var request = try! HttpRequest("https://www.google.com")
+        request.url = nil
+        
+        return request
+    }()
 }
 
 // MARK: - Public methods
@@ -41,6 +59,7 @@ public extension HttpRequest {
     
     var response: HttpResponse {
         get async throws {
+            let request = try request
             let response = await withUnsafeContinuation { continuation in
                 request
                     .response { response in
@@ -48,7 +67,7 @@ public extension HttpRequest {
                     }
             }
             
-            return try .init(from: response, with: self)
+            return try validator(.init(from: response, with: self))
         }
     }
 }

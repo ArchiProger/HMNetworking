@@ -8,16 +8,16 @@
 import Foundation
 import Alamofire
 
-public struct Host: HttpDefaultRequestPreference {
+public struct Host: HttpClientConfig {
     var url: URLConvertible
     
     public init(_ url: URLConvertible) {
         self.url = url
     }
     
-    public func prepare(request: DefaultRequest) -> DefaultRequest {
+    public func prepare(request: HttpRequest) -> HttpRequest {
         var request = request
-        request.host = url
+        request.url = try? url.asURL()
         
         return request
     }

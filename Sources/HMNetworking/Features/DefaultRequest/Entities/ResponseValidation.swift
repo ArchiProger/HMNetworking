@@ -7,16 +7,15 @@
 
 import Foundation
 
-public struct ResponseValidation: HttpDefaultRequestPreference {
+public struct ResponseValidation: HttpClientConfig {
     var handler: ResponseHandler
     
     public init(handler: @escaping ResponseHandler) {
         self.handler = handler
     }
     
-    public func prepare(request: DefaultRequest) -> DefaultRequest {
+    public func prepare(request: HttpRequest) -> HttpRequest {
         var request = request
-        request.responseHandler = handler
         
         return request
     }

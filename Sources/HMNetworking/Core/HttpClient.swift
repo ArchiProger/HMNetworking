@@ -27,7 +27,15 @@ import Alamofire
 /// }
 /// ```
 public struct HttpClient {
+    var defaultRequest: HttpRequest
     
+    public init(@HttpClientConfigBuilder preferences: () -> [HttpClientConfig]) {
+        self.defaultRequest = preferences().request
+    }
+    
+    public init() {
+        self.defaultRequest = .empty
+    }
 }
 
 // MARK: - Public methods

@@ -10,6 +10,11 @@ import XCTest
 
 final class HttpRequestTests: XCTestCase {
     func testEmptyURL() async throws {
-        _ = try HttpRequest("")
+        let client = HttpClient {
+            Host("Hello, World")
+            HttpHeaders {
+                
+            }
+        }
     }
 }

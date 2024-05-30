@@ -7,14 +7,14 @@
 
 import Foundation
 
-public struct Prepare: HttpDefaultRequestPreference {
+public struct Prepare: HttpClientConfig {
     var perform: PreparePerform
     
     public init(perform: @escaping PreparePerform) {
         self.perform = perform
     }
     
-    public func prepare(request: DefaultRequest) -> DefaultRequest {
+    public func prepare(request: HttpRequest) -> HttpRequest {
         var request = request
         request.prepare = perform
         
