@@ -8,14 +8,14 @@
 import Foundation
 import Alamofire
 
-public struct HttpMethod: HttpRequestPreference {
+public struct HttpMethod: HttpClientConfig {
     var method: HTTPMethod
     
     public init(_ method: HTTPMethod) {
         self.method = method
     }
     
-    public func prepare(request: URLRequest) -> URLRequest {
+    public func prepare(request: HttpRequest) -> HttpRequest {
         var request = request
         request.method = method
         

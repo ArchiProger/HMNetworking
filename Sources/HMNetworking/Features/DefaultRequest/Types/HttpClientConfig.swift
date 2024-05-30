@@ -12,8 +12,8 @@ public protocol HttpClientConfig {
 }
 
 public extension [HttpClientConfig] {
-    var request: HttpRequest {
-        var request = HttpRequest.empty
+    func request(initial: HttpRequest = .empty) -> HttpRequest {
+        var request = initial
         
         self.forEach {
             request = $0.prepare(request: request)

@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-public struct HttpBody: HttpRequestPreference {
+public struct HttpBody: HttpClientConfig {
     var data: Data?
     var header: HTTPHeader?
     
@@ -34,7 +34,7 @@ public struct HttpBody: HttpRequestPreference {
         }
     }
     
-    public func prepare(request: URLRequest) -> URLRequest {
+    public func prepare(request: HttpRequest) -> HttpRequest {
         var request = request
         request.httpBody = data
         

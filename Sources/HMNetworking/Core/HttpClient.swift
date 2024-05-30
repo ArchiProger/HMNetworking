@@ -30,7 +30,7 @@ public struct HttpClient {
     var defaultRequest: HttpRequest
     
     public init(@HttpClientConfigBuilder preferences: () -> [HttpClientConfig]) {
-        self.defaultRequest = preferences().request
+        self.defaultRequest = preferences().request()
     }
     
     public init() {
@@ -40,7 +40,20 @@ public struct HttpClient {
 
 // MARK: - Public methods
 public extension HttpClient {
-//    func request(_ url: URLConvertible) throws -> HttpRequest {
-//        
-//    }
+    func request(
+        _ url: URLConvertible,
+        @HttpClientConfigBuilder preferences: () -> [HttpClientConfig]
+    ) throws -> HttpRequest {
+        let component = try url.asURL()
+        let url: URL = if let url = defaultRequest.url {
+            url.appendingPathComponent(component.absoluteString)
+        } else {
+            component
+        }
+        
+        var request = defaultRequest
+        request.url = url
+        
+        return preferences().request(initial: defaultRequest)
+    }
 }
