@@ -26,12 +26,6 @@ final class SerializationTests: XCTestCase {
         HttpHeaders {
             Header(.contentType("application/json; charset=UTF-8"))            
         }
-        
-        ResponseValidation { response in
-            guard (200...299).contains(response.statusCode) else { throw "Unsuccessful error status" }
-            
-            return response
-        }
     }
     
     func testDataSerialization() async throws {

@@ -107,6 +107,10 @@
 		7557B1A22C08D2DD0042C542 /* SimpleRequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDBF6C2BB3324600B47B78 /* SimpleRequestsTests.swift */; };
 		7557B1A42C08D8450042C542 /* UnitingClientsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC1042BB49A8F00B47B78 /* UnitingClientsTests.swift */; };
 		7557B1A52C08D8450042C542 /* UnitingClientsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BDC1042BB49A8F00B47B78 /* UnitingClientsTests.swift */; };
+		7557B1AB2C08E0DE0042C542 /* ValidatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7557B1AA2C08E0DE0042C542 /* ValidatorsTests.swift */; };
+		7557B1AC2C08E0DE0042C542 /* ValidatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7557B1AA2C08E0DE0042C542 /* ValidatorsTests.swift */; };
+		7557B1AD2C08E0DE0042C542 /* ValidatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7557B1AA2C08E0DE0042C542 /* ValidatorsTests.swift */; };
+		7557B1AE2C08E0DE0042C542 /* ValidatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7557B1AA2C08E0DE0042C542 /* ValidatorsTests.swift */; };
 		75BDBF872BB3324600B47B78 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 75BDBF6A2BB3324600B47B78 /* LICENSE */; };
 		75BDBF8A2BB3324600B47B78 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 75BDBF6F2BB3324600B47B78 /* README.md */; };
 		75BDBFD92BB3373600B47B78 /* HMNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BDBF3D2BB3320B00B47B78 /* HMNetworking.framework */; platformFilter = ios; };
@@ -229,6 +233,7 @@
 		7557B10B2C08AA290042C542 /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		7557B1842C08AB1C0042C542 /* HttpRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestTests.swift; sourceTree = "<group>"; };
 		7557B1892C08B0660042C542 /* HttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
+		7557B1AA2C08E0DE0042C542 /* ValidatorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorsTests.swift; sourceTree = "<group>"; };
 		75A23B292BBDA29E00AAF2F6 /* PrepareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareTests.swift; sourceTree = "<group>"; };
 		75BDBF3D2BB3320B00B47B78 /* HMNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HMNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BDBF6A2BB3324600B47B78 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -354,6 +359,7 @@
 		7557B0E22C08AA290042C542 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7557B1A92C08DBB30042C542 /* Type */,
 				7557B1A72C08DB800042C542 /* dsl */,
 				7557B0E02C08AA290042C542 /* HttpClient.swift */,
 				7557B0E12C08AA290042C542 /* HttpRequest.swift */,
@@ -384,38 +390,6 @@
 				7557B0EB2C08AA290042C542 /* Entities */,
 			);
 			path = Body;
-			sourceTree = "<group>";
-		};
-		7557B0EE2C08AA290042C542 /* dsl */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = dsl;
-			sourceTree = "<group>";
-		};
-		7557B0F42C08AA290042C542 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		7557B0F62C08AA290042C542 /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				7557B0F52C08AA290042C542 /* HttpClientConfig.swift */,
-			);
-			path = Types;
-			sourceTree = "<group>";
-		};
-		7557B0F72C08AA290042C542 /* DefaultRequest */ = {
-			isa = PBXGroup;
-			children = (
-				7557B0EE2C08AA290042C542 /* dsl */,
-				7557B0F42C08AA290042C542 /* Entities */,
-				7557B0F62C08AA290042C542 /* Types */,
-			);
-			path = DefaultRequest;
 			sourceTree = "<group>";
 		};
 		7557B0F92C08AA290042C542 /* dsl */ = {
@@ -504,7 +478,6 @@
 				7557B0FF2C08AA290042C542 /* Headers */,
 				7557B1022C08AA290042C542 /* Methods */,
 				7557B10D2C08AA290042C542 /* Query */,
-				7557B0F72C08AA290042C542 /* DefaultRequest */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -532,6 +505,14 @@
 				7557B0F32C08AA290042C542 /* ResponseValidation.swift */,
 			);
 			path = Validators;
+			sourceTree = "<group>";
+		};
+		7557B1A92C08DBB30042C542 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				7557B0F52C08AA290042C542 /* HttpClientConfig.swift */,
+			);
+			path = Type;
 			sourceTree = "<group>";
 		};
 		75BDBF332BB3320B00B47B78 = {
@@ -570,6 +551,7 @@
 				75BDC1042BB49A8F00B47B78 /* UnitingClientsTests.swift */,
 				75A23B292BBDA29E00AAF2F6 /* PrepareTests.swift */,
 				7557B1842C08AB1C0042C542 /* HttpRequestTests.swift */,
+				7557B1AA2C08E0DE0042C542 /* ValidatorsTests.swift */,
 			);
 			path = HMNetworkingTests;
 			sourceTree = "<group>";
@@ -1201,6 +1183,7 @@
 				7557B1A02C08D2DD0042C542 /* UnitingClientsTests.swift in Sources */,
 				7557B1A12C08D2DD0042C542 /* PrepareTests.swift in Sources */,
 				7557B1A22C08D2DD0042C542 /* SimpleRequestsTests.swift in Sources */,
+				7557B1AB2C08E0DE0042C542 /* ValidatorsTests.swift in Sources */,
 				7557B1852C08AB1C0042C542 /* HttpRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1239,6 +1222,7 @@
 				7557B19B2C08D2DC0042C542 /* UnitingClientsTests.swift in Sources */,
 				7557B19C2C08D2DC0042C542 /* PrepareTests.swift in Sources */,
 				7557B19D2C08D2DC0042C542 /* SimpleRequestsTests.swift in Sources */,
+				7557B1AC2C08E0DE0042C542 /* ValidatorsTests.swift in Sources */,
 				7557B1862C08AB1C0042C542 /* HttpRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1277,6 +1261,7 @@
 				7557B1972C08D2DB0042C542 /* PrepareTests.swift in Sources */,
 				7557B1982C08D2DB0042C542 /* SimpleRequestsTests.swift in Sources */,
 				7557B1872C08AB1C0042C542 /* HttpRequestTests.swift in Sources */,
+				7557B1AD2C08E0DE0042C542 /* ValidatorsTests.swift in Sources */,
 				7557B1A42C08D8450042C542 /* UnitingClientsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1315,6 +1300,7 @@
 				7557B1922C08D2DA0042C542 /* PrepareTests.swift in Sources */,
 				7557B1932C08D2DA0042C542 /* SimpleRequestsTests.swift in Sources */,
 				7557B1882C08AB1C0042C542 /* HttpRequestTests.swift in Sources */,
+				7557B1AE2C08E0DE0042C542 /* ValidatorsTests.swift in Sources */,
 				7557B1A52C08D8450042C542 /* UnitingClientsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

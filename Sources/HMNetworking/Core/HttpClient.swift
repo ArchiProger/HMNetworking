@@ -49,19 +49,17 @@ public extension HttpClient {
         _ convertible: URLConvertible,
         @HttpClientConfigBuilder preferences: () -> [HttpClientConfig] = { [] }
     ) async throws -> HttpResponse {
-        let defaultRequest = self.preferences.request()
+        let preferences = self.preferences + preferences()
+        var request = preferences.request()
+        request.validators = preferences.validators
+        
         let component = try convertible.asURL()
-        let url = if let url = defaultRequest.url {
+        request.url = if let url = request.url {
             url.appendingPathComponent(component.absoluteString)
         } else {
             component
         }
         
-        var request = defaultRequest
-        request.url = url
-        
-        return try await preferences()
-            .request(initial: request)
-            .response
+        return try await request.response
     }
 }

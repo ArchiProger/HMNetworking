@@ -27,4 +27,8 @@ public extension [HttpClientConfig] {
         
         return request
     }
+    
+    var validators: [ResponseValidator] {
+        self.map { $0.process(response:) }
+    }
 }

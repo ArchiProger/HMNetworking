@@ -26,13 +26,31 @@ public struct HttpRequest {
     
     var request: DataRequest {
         get throws {
-            let request = try prepare(self)
+            var request = try prepare(self)
+            request.url = encodeURL(request.url)
+            
             let result = session.request(request.urlRequest)
             
             guard let credential else { return result }
             
             return result.authenticate(with: credential)
         }
+    }
+    
+    func encodeURL(_ url: URL?) -> URL? {
+        guard let url else { return url }
+        
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        
+        if let encodedPath = components?.path.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) {
+            components?.path = encodedPath
+        }
+        
+        if let query = components?.query {
+            components?.percentEncodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        }
+        
+        return components?.url
     }
 }
 
