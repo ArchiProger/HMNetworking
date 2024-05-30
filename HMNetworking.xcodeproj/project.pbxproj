@@ -354,6 +354,7 @@
 		7557B0E22C08AA290042C542 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7557B1A72C08DB800042C542 /* dsl */,
 				7557B0E02C08AA290042C542 /* HttpClient.swift */,
 				7557B0E12C08AA290042C542 /* HttpRequest.swift */,
 				7557B1892C08B0660042C542 /* HttpResponse.swift */,
@@ -388,7 +389,6 @@
 		7557B0EE2C08AA290042C542 /* dsl */ = {
 			isa = PBXGroup;
 			children = (
-				7557B0ED2C08AA290042C542 /* HttpClientConfigBuilder.swift */,
 			);
 			path = dsl;
 			sourceTree = "<group>";
@@ -396,9 +396,6 @@
 		7557B0F42C08AA290042C542 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				7557B0F02C08AA290042C542 /* Host.swift */,
-				7557B0F22C08AA290042C542 /* Prepare.swift */,
-				7557B0F32C08AA290042C542 /* ResponseValidation.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -501,21 +498,40 @@
 		7557B1132C08AA290042C542 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				7557B18E2C08B7CA0042C542 /* Request */,
+				7557B1A82C08DB8B0042C542 /* Validators */,
+				7557B1A62C08DB720042C542 /* Host */,
+				7557B0EC2C08AA290042C542 /* Body */,
+				7557B0FF2C08AA290042C542 /* Headers */,
+				7557B1022C08AA290042C542 /* Methods */,
+				7557B10D2C08AA290042C542 /* Query */,
 				7557B0F72C08AA290042C542 /* DefaultRequest */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		7557B18E2C08B7CA0042C542 /* Request */ = {
+		7557B1A62C08DB720042C542 /* Host */ = {
 			isa = PBXGroup;
 			children = (
-				7557B0EC2C08AA290042C542 /* Body */,
-				7557B0FF2C08AA290042C542 /* Headers */,
-				7557B1022C08AA290042C542 /* Methods */,
-				7557B10D2C08AA290042C542 /* Query */,
+				7557B0F02C08AA290042C542 /* Host.swift */,
 			);
-			path = Request;
+			path = Host;
+			sourceTree = "<group>";
+		};
+		7557B1A72C08DB800042C542 /* dsl */ = {
+			isa = PBXGroup;
+			children = (
+				7557B0ED2C08AA290042C542 /* HttpClientConfigBuilder.swift */,
+			);
+			path = dsl;
+			sourceTree = "<group>";
+		};
+		7557B1A82C08DB8B0042C542 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				7557B0F22C08AA290042C542 /* Prepare.swift */,
+				7557B0F32C08AA290042C542 /* ResponseValidation.swift */,
+			);
+			path = Validators;
 			sourceTree = "<group>";
 		};
 		75BDBF332BB3320B00B47B78 = {
