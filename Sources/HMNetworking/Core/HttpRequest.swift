@@ -15,6 +15,7 @@ public typealias ResponseValidator = (HttpResponse) async throws -> HttpResponse
 public struct HttpRequest {
     var urlRequest: URLRequest
     var credential: URLCredential?
+    var formData: MultipartFormData = .init()
     var prepare: PreparePerform = { $0 }
     var validators: [ResponseValidator] = []
     var session: Session

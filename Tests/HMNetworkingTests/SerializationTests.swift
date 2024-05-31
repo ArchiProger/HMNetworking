@@ -24,7 +24,8 @@ final class SerializationTests: XCTestCase {
     private let client = HttpClient {
         Host("https://jsonplaceholder.typicode.com")
         HttpHeaders {
-            Header(.contentType("application/json; charset=UTF-8"))            
+            Header(.contentType("application/json; charset=UTF-8"))
+            Header(.defaultUserAgent)
         }
     }
     

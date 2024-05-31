@@ -15,6 +15,14 @@
 		7532392E2BC3F5FF00D830ED /* HMNetworking.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7532392C2BC3F5FF00D830ED /* HMNetworking.docc */; };
 		7532392F2BC3F5FF00D830ED /* HMNetworking.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7532392C2BC3F5FF00D830ED /* HMNetworking.docc */; };
 		753239302BC3F5FF00D830ED /* HMNetworking.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7532392C2BC3F5FF00D830ED /* HMNetworking.docc */; };
+		7547E6CC2C0A115300ADD673 /* FormDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7547E6CB2C0A115300ADD673 /* FormDataBuilder.swift */; };
+		7547E6CD2C0A115300ADD673 /* FormDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7547E6CB2C0A115300ADD673 /* FormDataBuilder.swift */; };
+		7547E6CE2C0A115300ADD673 /* FormDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7547E6CB2C0A115300ADD673 /* FormDataBuilder.swift */; };
+		7547E6CF2C0A115300ADD673 /* FormDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7547E6CB2C0A115300ADD673 /* FormDataBuilder.swift */; };
+		7547E6D12C0A11BD00ADD673 /* FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7547E6D02C0A11BD00ADD673 /* FormData.swift */; };
+		7547E6D22C0A11BD00ADD673 /* FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7547E6D02C0A11BD00ADD673 /* FormData.swift */; };
+		7547E6D32C0A11BD00ADD673 /* FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7547E6D02C0A11BD00ADD673 /* FormData.swift */; };
+		7547E6D42C0A11BD00ADD673 /* FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7547E6D02C0A11BD00ADD673 /* FormData.swift */; };
 		7557B1142C08AA290042C542 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7557B0E02C08AA290042C542 /* HttpClient.swift */; };
 		7557B1152C08AA290042C542 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7557B0E02C08AA290042C542 /* HttpClient.swift */; };
 		7557B1162C08AA290042C542 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7557B0E02C08AA290042C542 /* HttpClient.swift */; };
@@ -111,6 +119,10 @@
 		7557B1AC2C08E0DE0042C542 /* ValidatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7557B1AA2C08E0DE0042C542 /* ValidatorsTests.swift */; };
 		7557B1AD2C08E0DE0042C542 /* ValidatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7557B1AA2C08E0DE0042C542 /* ValidatorsTests.swift */; };
 		7557B1AE2C08E0DE0042C542 /* ValidatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7557B1AA2C08E0DE0042C542 /* ValidatorsTests.swift */; };
+		7589FB062C0A1EF800AA41D2 /* FormDataBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589FB052C0A1EF800AA41D2 /* FormDataBody.swift */; };
+		7589FB072C0A1EF800AA41D2 /* FormDataBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589FB052C0A1EF800AA41D2 /* FormDataBody.swift */; };
+		7589FB082C0A1EF800AA41D2 /* FormDataBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589FB052C0A1EF800AA41D2 /* FormDataBody.swift */; };
+		7589FB092C0A1EF800AA41D2 /* FormDataBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589FB052C0A1EF800AA41D2 /* FormDataBody.swift */; };
 		75BDBF872BB3324600B47B78 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 75BDBF6A2BB3324600B47B78 /* LICENSE */; };
 		75BDBF8A2BB3324600B47B78 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 75BDBF6F2BB3324600B47B78 /* README.md */; };
 		75BDBFD92BB3373600B47B78 /* HMNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BDBF3D2BB3320B00B47B78 /* HMNetworking.framework */; platformFilter = ios; };
@@ -214,6 +226,8 @@
 		5DB70DC3F0C7C9A6DFE7A2C2 /* Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.debug.xcconfig"; path = "Target Support Files/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		662A84E4B18332F5761D55E9 /* Pods-tvOS-HMNetworking tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS-HMNetworking tvOS.debug.xcconfig"; path = "Target Support Files/Pods-tvOS-HMNetworking tvOS/Pods-tvOS-HMNetworking tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		7532392C2BC3F5FF00D830ED /* HMNetworking.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = HMNetworking.docc; sourceTree = "<group>"; };
+		7547E6CB2C0A115300ADD673 /* FormDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDataBuilder.swift; sourceTree = "<group>"; };
+		7547E6D02C0A11BD00ADD673 /* FormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormData.swift; sourceTree = "<group>"; };
 		7557B0E02C08AA290042C542 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		7557B0E12C08AA290042C542 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		7557B0E52C08AA290042C542 /* os_log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = os_log.swift; sourceTree = "<group>"; };
@@ -234,6 +248,7 @@
 		7557B1842C08AB1C0042C542 /* HttpRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestTests.swift; sourceTree = "<group>"; };
 		7557B1892C08B0660042C542 /* HttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
 		7557B1AA2C08E0DE0042C542 /* ValidatorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorsTests.swift; sourceTree = "<group>"; };
+		7589FB052C0A1EF800AA41D2 /* FormDataBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDataBody.swift; sourceTree = "<group>"; };
 		75A23B292BBDA29E00AAF2F6 /* PrepareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareTests.swift; sourceTree = "<group>"; };
 		75BDBF3D2BB3320B00B47B78 /* HMNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HMNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BDBF6A2BB3324600B47B78 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -356,6 +371,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7547E6C92C09B3E800ADD673 /* Uploading */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Uploading;
+			sourceTree = "<group>";
+		};
+		7547E6CA2C0A112500ADD673 /* dsl */ = {
+			isa = PBXGroup;
+			children = (
+				7547E6CB2C0A115300ADD673 /* FormDataBuilder.swift */,
+			);
+			path = dsl;
+			sourceTree = "<group>";
+		};
 		7557B0E22C08AA290042C542 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +410,8 @@
 			isa = PBXGroup;
 			children = (
 				7557B0EA2C08AA290042C542 /* HttpBody.swift */,
+				7547E6D02C0A11BD00ADD673 /* FormData.swift */,
+				7589FB052C0A1EF800AA41D2 /* FormDataBody.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -387,6 +419,7 @@
 		7557B0EC2C08AA290042C542 /* Body */ = {
 			isa = PBXGroup;
 			children = (
+				7547E6CA2C0A112500ADD673 /* dsl */,
 				7557B0EB2C08AA290042C542 /* Entities */,
 			);
 			path = Body;
@@ -472,6 +505,7 @@
 		7557B1132C08AA290042C542 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				7547E6C92C09B3E800ADD673 /* Uploading */,
 				7557B1A82C08DB8B0042C542 /* Validators */,
 				7557B1A62C08DB720042C542 /* Host */,
 				7557B0EC2C08AA290042C542 /* Body */,
@@ -1158,10 +1192,13 @@
 				7557B1342C08AA290042C542 /* HttpBody.swift in Sources */,
 				7557B1642C08AA290042C542 /* HttpMethod.swift in Sources */,
 				7557B1702C08AA290042C542 /* QueryBuilder.swift in Sources */,
+				7589FB062C0A1EF800AA41D2 /* FormDataBody.swift in Sources */,
+				7547E6D12C0A11BD00ADD673 /* FormData.swift in Sources */,
 				7557B1142C08AA290042C542 /* HttpClient.swift in Sources */,
 				7557B1782C08AA290042C542 /* Query.swift in Sources */,
 				7557B18A2C08B0660042C542 /* HttpResponse.swift in Sources */,
 				7557B1402C08AA290042C542 /* Host.swift in Sources */,
+				7547E6CC2C0A115300ADD673 /* FormDataBuilder.swift in Sources */,
 				7532392D2BC3F5FF00D830ED /* HMNetworking.docc in Sources */,
 				7557B1182C08AA290042C542 /* HttpRequest.swift in Sources */,
 				7557B1602C08AA290042C542 /* HttpHeaderType.swift in Sources */,
@@ -1197,10 +1234,13 @@
 				7557B1352C08AA290042C542 /* HttpBody.swift in Sources */,
 				7557B1652C08AA290042C542 /* HttpMethod.swift in Sources */,
 				7557B1712C08AA290042C542 /* QueryBuilder.swift in Sources */,
+				7589FB072C0A1EF800AA41D2 /* FormDataBody.swift in Sources */,
+				7547E6D22C0A11BD00ADD673 /* FormData.swift in Sources */,
 				7557B1152C08AA290042C542 /* HttpClient.swift in Sources */,
 				7557B1792C08AA290042C542 /* Query.swift in Sources */,
 				7557B18B2C08B0660042C542 /* HttpResponse.swift in Sources */,
 				7557B1412C08AA290042C542 /* Host.swift in Sources */,
+				7547E6CD2C0A115300ADD673 /* FormDataBuilder.swift in Sources */,
 				7532392E2BC3F5FF00D830ED /* HMNetworking.docc in Sources */,
 				7557B1192C08AA290042C542 /* HttpRequest.swift in Sources */,
 				7557B1612C08AA290042C542 /* HttpHeaderType.swift in Sources */,
@@ -1236,10 +1276,13 @@
 				7557B1362C08AA290042C542 /* HttpBody.swift in Sources */,
 				7557B1662C08AA290042C542 /* HttpMethod.swift in Sources */,
 				7557B1722C08AA290042C542 /* QueryBuilder.swift in Sources */,
+				7589FB082C0A1EF800AA41D2 /* FormDataBody.swift in Sources */,
+				7547E6D32C0A11BD00ADD673 /* FormData.swift in Sources */,
 				7557B1162C08AA290042C542 /* HttpClient.swift in Sources */,
 				7557B17A2C08AA290042C542 /* Query.swift in Sources */,
 				7557B18C2C08B0660042C542 /* HttpResponse.swift in Sources */,
 				7557B1422C08AA290042C542 /* Host.swift in Sources */,
+				7547E6CE2C0A115300ADD673 /* FormDataBuilder.swift in Sources */,
 				7532392F2BC3F5FF00D830ED /* HMNetworking.docc in Sources */,
 				7557B11A2C08AA290042C542 /* HttpRequest.swift in Sources */,
 				7557B1622C08AA290042C542 /* HttpHeaderType.swift in Sources */,
@@ -1275,10 +1318,13 @@
 				7557B1372C08AA290042C542 /* HttpBody.swift in Sources */,
 				7557B1672C08AA290042C542 /* HttpMethod.swift in Sources */,
 				7557B1732C08AA290042C542 /* QueryBuilder.swift in Sources */,
+				7589FB092C0A1EF800AA41D2 /* FormDataBody.swift in Sources */,
+				7547E6D42C0A11BD00ADD673 /* FormData.swift in Sources */,
 				7557B1172C08AA290042C542 /* HttpClient.swift in Sources */,
 				7557B17B2C08AA290042C542 /* Query.swift in Sources */,
 				7557B18D2C08B0660042C542 /* HttpResponse.swift in Sources */,
 				7557B1432C08AA290042C542 /* Host.swift in Sources */,
+				7547E6CF2C0A115300ADD673 /* FormDataBuilder.swift in Sources */,
 				753239302BC3F5FF00D830ED /* HMNetworking.docc in Sources */,
 				7557B11B2C08AA290042C542 /* HttpRequest.swift in Sources */,
 				7557B1632C08AA290042C542 /* HttpHeaderType.swift in Sources */,
