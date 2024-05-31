@@ -15,9 +15,10 @@ public typealias ResponseValidator = (HttpResponse) async throws -> HttpResponse
 public struct HttpRequest {
     var urlRequest: URLRequest
     var credential: URLCredential?
+    var mode: RequestMode.Mode = .request
     var formData: MultipartFormData = .init()
     var prepare: PreparePerform = { $0 }
-    var validators: [ResponseValidator] = []
+    var validators: [any HttpClientConfig] = []
     var session: Session
     
     init(_ url: URLConvertible, session: Session = AF) throws {
@@ -91,7 +92,11 @@ public extension HttpRequest {
     
     var response: HttpResponse {
         get async throws {
-            let request = try request
+            let request = switch mode {
+                case .request: try request
+                case .upload: try uploadRequest
+            }
+            
             let response = await withUnsafeContinuation { continuation in
                 request
                     .response { response in
@@ -101,26 +106,7 @@ public extension HttpRequest {
             
             var result = HttpResponse(from: response, with: self)
             for validator in validators {
-                result = try await validator(result)
-            }
-            
-            return result
-        }
-    }
-    
-    var uploadResponse: HttpResponse {
-        get async throws {
-            let request = try uploadRequest
-            let response = await withUnsafeContinuation { continuation in
-                request
-                    .response { response in
-                        continuation.resume(returning: response)
-                    }
-            }
-            
-            var result = HttpResponse(from: response, with: self)
-            for validator in validators {
-                result = try await validator(result)
+                result = try await validator.process(response: result)
             }
             
             return result

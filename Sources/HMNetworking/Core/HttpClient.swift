@@ -36,7 +36,7 @@ public struct HttpClient {
     func request(_ convertible: URLConvertible, preferences: [HttpClientConfig]) throws -> HttpRequest {
         let preferences = self.preferences + preferences
         var request = preferences.request()
-        request.validators = preferences.validators
+        request.validators = preferences
         
         let component = try convertible.asURL()
         request.url = if let url = request.url {
@@ -60,6 +60,7 @@ public extension HttpClient {
         return client
     }
     
+    @discardableResult
     func request(
         _ convertible: URLConvertible,
         @HttpClientConfigBuilder preferences: () -> [HttpClientConfig] = { [] }
@@ -67,10 +68,14 @@ public extension HttpClient {
         try await request(convertible, preferences: preferences()).response
     }
     
+    @discardableResult
     func upload(
         _ convertible: URLConvertible,
         @HttpClientConfigBuilder preferences: () -> [HttpClientConfig] = { [] }
     ) async throws -> HttpResponse {
-        try await request(convertible, preferences: preferences()).uploadResponse
+        var request = try request(convertible, preferences: preferences())
+        request.mode = .upload
+        
+        return try await request.response
     }
 }
