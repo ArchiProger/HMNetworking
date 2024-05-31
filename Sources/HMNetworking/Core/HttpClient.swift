@@ -32,6 +32,21 @@ public struct HttpClient {
     public init(@HttpClientConfigBuilder preferences: () -> [HttpClientConfig] = { [] }) {
         self.preferences = preferences()
     }
+    
+    func request(_ convertible: URLConvertible, preferences: [HttpClientConfig]) throws -> HttpRequest {
+        let preferences = self.preferences + preferences
+        var request = preferences.request()
+        request.validators = preferences.validators
+        
+        let component = try convertible.asURL()
+        request.url = if let url = request.url {
+            url.appendingPathComponent(component.absoluteString)
+        } else {
+            component
+        }
+        
+        return request
+    }
 }
 
 // MARK: - Public methods
@@ -49,17 +64,13 @@ public extension HttpClient {
         _ convertible: URLConvertible,
         @HttpClientConfigBuilder preferences: () -> [HttpClientConfig] = { [] }
     ) async throws -> HttpResponse {
-        let preferences = self.preferences + preferences()
-        var request = preferences.request()
-        request.validators = preferences.validators
-        
-        let component = try convertible.asURL()
-        request.url = if let url = request.url {
-            url.appendingPathComponent(component.absoluteString)
-        } else {
-            component
-        }
-        
-        return try await request.response
+        try await request(convertible, preferences: preferences()).response
+    }
+    
+    func upload(
+        _ convertible: URLConvertible,
+        @HttpClientConfigBuilder preferences: () -> [HttpClientConfig] = { [] }
+    ) async throws -> HttpResponse {
+        try await request(convertible, preferences: preferences()).uploadResponse
     }
 }

@@ -38,6 +38,19 @@ public struct HttpRequest {
         }
     }
     
+    var uploadRequest: UploadRequest {
+        get throws {
+            var request = try prepare(self)
+            request.url = encodeURL(request.url)
+            
+            let result = session.upload(multipartFormData: formData, with: request.urlRequest)
+            
+            guard let credential else { return result }
+            
+            return result.authenticate(with: credential)
+        }
+    }
+    
     func encodeURL(_ url: URL?) -> URL? {
         guard let url else { return url }
         
@@ -79,6 +92,25 @@ public extension HttpRequest {
     var response: HttpResponse {
         get async throws {
             let request = try request
+            let response = await withUnsafeContinuation { continuation in
+                request
+                    .response { response in
+                        continuation.resume(returning: response)
+                    }
+            }
+            
+            var result = HttpResponse(from: response, with: self)
+            for validator in validators {
+                result = try await validator(result)
+            }
+            
+            return result
+        }
+    }
+    
+    var uploadResponse: HttpResponse {
+        get async throws {
+            let request = try uploadRequest
             let response = await withUnsafeContinuation { continuation in
                 request
                     .response { response in
