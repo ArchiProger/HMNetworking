@@ -9,7 +9,7 @@ import Foundation
 
 public struct Retry: HttpClientConfig {
     public typealias RetryCondition = (HttpResponse) -> Bool
-    public typealias RetryModifier = (HttpRequest) -> HttpRequest
+    public typealias RetryModifier = (HttpRequest) async throws -> HttpRequest
     
     var maxRetries: Int
     var shouldRetry: RetryCondition = { _ in false }
@@ -28,10 +28,10 @@ public struct Retry: HttpClientConfig {
             
             guard result == nil || shouldRetry else { break }
             
-            var request = modifier(response.request)
-            request.validators.removeAll { $0 is Retry }
+            var request = try? await modifier(response.request)
+            request?.validators.removeAll { $0 is Retry }
                                     
-            response = (try? await request.response) ?? response
+            response = (try? await request?.response) ?? response
         }
         
         return response
