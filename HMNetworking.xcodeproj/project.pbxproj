@@ -131,6 +131,10 @@
 		7589FB1A2C0A29C200AA41D2 /* RetryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589FB182C0A29C200AA41D2 /* RetryTests.swift */; };
 		7589FB1B2C0A29C200AA41D2 /* RetryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589FB182C0A29C200AA41D2 /* RetryTests.swift */; };
 		7589FB1C2C0A29C200AA41D2 /* RetryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589FB182C0A29C200AA41D2 /* RetryTests.swift */; };
+		7589FB202C0A69CE00AA41D2 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589FB1F2C0A69CE00AA41D2 /* Authentication.swift */; };
+		7589FB212C0A69CE00AA41D2 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589FB1F2C0A69CE00AA41D2 /* Authentication.swift */; };
+		7589FB222C0A69CE00AA41D2 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589FB1F2C0A69CE00AA41D2 /* Authentication.swift */; };
+		7589FB232C0A69CE00AA41D2 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7589FB1F2C0A69CE00AA41D2 /* Authentication.swift */; };
 		75BDBF872BB3324600B47B78 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 75BDBF6A2BB3324600B47B78 /* LICENSE */; };
 		75BDBF8A2BB3324600B47B78 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 75BDBF6F2BB3324600B47B78 /* README.md */; };
 		75BDBFD92BB3373600B47B78 /* HMNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BDBF3D2BB3320B00B47B78 /* HMNetworking.framework */; platformFilter = ios; };
@@ -259,6 +263,7 @@
 		7589FB0C2C0A227900AA41D2 /* Retry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retry.swift; sourceTree = "<group>"; };
 		7589FB132C0A27E500AA41D2 /* RequestMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMode.swift; sourceTree = "<group>"; };
 		7589FB182C0A29C200AA41D2 /* RetryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryTests.swift; sourceTree = "<group>"; };
+		7589FB1F2C0A69CE00AA41D2 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		75A23B292BBDA29E00AAF2F6 /* PrepareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareTests.swift; sourceTree = "<group>"; };
 		75BDBF3D2BB3320B00B47B78 /* HMNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HMNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BDBF6A2BB3324600B47B78 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -515,6 +520,7 @@
 		7557B1132C08AA290042C542 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				7589FB1D2C0A69AE00AA41D2 /* Auth */,
 				7589FB112C0A27D400AA41D2 /* Mode */,
 				7589FB0A2C0A226700AA41D2 /* Retry */,
 				7547E6C92C09B3E800ADD673 /* Uploading */,
@@ -589,6 +595,22 @@
 			isa = PBXGroup;
 			children = (
 				7589FB132C0A27E500AA41D2 /* RequestMode.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		7589FB1D2C0A69AE00AA41D2 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7589FB1E2C0A69B300AA41D2 /* Entities */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		7589FB1E2C0A69B300AA41D2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7589FB1F2C0A69CE00AA41D2 /* Authentication.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1249,6 +1271,7 @@
 				7557B1602C08AA290042C542 /* HttpHeaderType.swift in Sources */,
 				7589FB0D2C0A227900AA41D2 /* Retry.swift in Sources */,
 				7557B1542C08AA290042C542 /* HttpHeadersBuilder.swift in Sources */,
+				7589FB202C0A69CE00AA41D2 /* Authentication.swift in Sources */,
 				7557B1242C08AA290042C542 /* os_log.swift in Sources */,
 				7557B1382C08AA290042C542 /* HttpClientConfigBuilder.swift in Sources */,
 				7557B1742C08AA290042C542 /* Parameter.swift in Sources */,
@@ -1293,6 +1316,7 @@
 				7557B1612C08AA290042C542 /* HttpHeaderType.swift in Sources */,
 				7589FB0E2C0A227900AA41D2 /* Retry.swift in Sources */,
 				7557B1552C08AA290042C542 /* HttpHeadersBuilder.swift in Sources */,
+				7589FB212C0A69CE00AA41D2 /* Authentication.swift in Sources */,
 				7557B1252C08AA290042C542 /* os_log.swift in Sources */,
 				7557B1392C08AA290042C542 /* HttpClientConfigBuilder.swift in Sources */,
 				7557B1752C08AA290042C542 /* Parameter.swift in Sources */,
@@ -1337,6 +1361,7 @@
 				7557B1622C08AA290042C542 /* HttpHeaderType.swift in Sources */,
 				7589FB0F2C0A227900AA41D2 /* Retry.swift in Sources */,
 				7557B1562C08AA290042C542 /* HttpHeadersBuilder.swift in Sources */,
+				7589FB222C0A69CE00AA41D2 /* Authentication.swift in Sources */,
 				7557B1262C08AA290042C542 /* os_log.swift in Sources */,
 				7557B13A2C08AA290042C542 /* HttpClientConfigBuilder.swift in Sources */,
 				7557B1762C08AA290042C542 /* Parameter.swift in Sources */,
@@ -1381,6 +1406,7 @@
 				7557B1632C08AA290042C542 /* HttpHeaderType.swift in Sources */,
 				7589FB102C0A227900AA41D2 /* Retry.swift in Sources */,
 				7557B1572C08AA290042C542 /* HttpHeadersBuilder.swift in Sources */,
+				7589FB232C0A69CE00AA41D2 /* Authentication.swift in Sources */,
 				7557B1272C08AA290042C542 /* os_log.swift in Sources */,
 				7557B13B2C08AA290042C542 /* HttpClientConfigBuilder.swift in Sources */,
 				7557B1772C08AA290042C542 /* Parameter.swift in Sources */,
