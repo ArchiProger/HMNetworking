@@ -16,12 +16,11 @@ public struct Query: HttpClientConfig {
     }
     
     public func prepare(request: HttpRequest) -> HttpRequest {
-        let text = query.addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed)
+        var request = request
         let host = request.url?.absoluteString
         
-        if let text, let host {
-            var request = request
-            request.url = .init(string: host + text)
+        if let host {
+            request.url = .init(string: host + query)
         }
         
         return request
