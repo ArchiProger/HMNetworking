@@ -9,12 +9,10 @@ import Foundation
 
 public protocol HttpClientConfig {
     func prepare(request: HttpRequest) -> HttpRequest
-    func process(response: HttpResponse) async throws -> HttpResponse
 }
 
 public extension HttpClientConfig {
     func prepare(request: HttpRequest) -> HttpRequest { request }
-    func process(response: HttpResponse) async throws -> HttpResponse { response }
 }
 
 public extension [HttpClientConfig] {

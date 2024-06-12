@@ -11,16 +11,15 @@ import Alamofire
 extension Session: @unchecked @retroactive Sendable { }
 
 public typealias PreparePerform = @Sendable (HttpRequest) throws -> HttpRequest
-public typealias ResponseValidator = @Sendable (HttpResponse) async throws -> HttpResponse
 
 @dynamicMemberLookup
-public struct HttpRequest {
+public struct HttpRequest: Sendable {
     var urlRequest: URLRequest
     var credential: URLCredential?
     var mode: RequestMode.Mode = .request
     var formData: MultipartFormData = .init()
     var prepare: PreparePerform = { $0 }
-    var validators: [HttpClientConfig] = []
+    var validators: [ResponseValidatorType] = []
     var session: Session
     
     public init(_ url: URLConvertible, session: Session = AF) throws {
@@ -103,7 +102,7 @@ public extension HttpRequest {
             
             var result = HttpResponse(from: response, with: self)
             for validator in validators {
-                result = try await validator.process(response: result)
+                result = try await validator.execute(for: result)
             }
             
             return result

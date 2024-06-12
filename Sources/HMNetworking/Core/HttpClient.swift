@@ -26,7 +26,7 @@ import Alamofire
 ///     }
 /// }
 /// ```
-public struct HttpClient {
+public class HttpClient {
     var preferences: [HttpClientConfig]
     
     public init(@HttpClientConfigBuilder preferences: () -> [HttpClientConfig] = { [] }) {
@@ -35,10 +35,9 @@ public struct HttpClient {
     
     func request(_ convertible: URLConvertible, preferences: [HttpClientConfig]) throws -> HttpRequest {
         let preferences = self.preferences + preferences
-        var request = preferences.request()
-        request.validators = preferences
-        
         let component = try convertible.asURL()
+        
+        var request = preferences.request()
         request.url = if let url = request.url {
             url.appendingPathComponent(component.absoluteString)
         } else {
@@ -54,10 +53,9 @@ public extension HttpClient {
     func copy(
         @HttpClientConfigBuilder preferences: () -> [HttpClientConfig] = { [] }
     ) -> HttpClient {
-        var client = self
-        client.preferences += preferences()
+        self.preferences += preferences()
         
-        return client
+        return self
     }
     
     @discardableResult

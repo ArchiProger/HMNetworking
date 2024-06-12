@@ -150,6 +150,14 @@
 		75BDC0852BB3384200B47B78 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 75BDBF6A2BB3324600B47B78 /* LICENSE */; };
 		75BDC0972BB338FB00B47B78 /* HMNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BDC0892BB3384200B47B78 /* HMNetworking.framework */; };
 		75BDC0982BB338FB00B47B78 /* HMNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75BDC0892BB3384200B47B78 /* HMNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		75BF9FD42C1A364900BF7968 /* ResponseValidatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9FD32C1A364900BF7968 /* ResponseValidatorType.swift */; };
+		75BF9FD52C1A364900BF7968 /* ResponseValidatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9FD32C1A364900BF7968 /* ResponseValidatorType.swift */; };
+		75BF9FD62C1A364900BF7968 /* ResponseValidatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9FD32C1A364900BF7968 /* ResponseValidatorType.swift */; };
+		75BF9FD72C1A364900BF7968 /* ResponseValidatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9FD32C1A364900BF7968 /* ResponseValidatorType.swift */; };
+		75BF9FD92C1A36DC00BF7968 /* RetryValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9FD82C1A36DC00BF7968 /* RetryValidator.swift */; };
+		75BF9FDA2C1A36DC00BF7968 /* RetryValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9FD82C1A36DC00BF7968 /* RetryValidator.swift */; };
+		75BF9FDB2C1A36DC00BF7968 /* RetryValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9FD82C1A36DC00BF7968 /* RetryValidator.swift */; };
+		75BF9FDC2C1A36DC00BF7968 /* RetryValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF9FD82C1A36DC00BF7968 /* RetryValidator.swift */; };
 		98038DE1EF3189466595611D /* Pods_iOS_HMNetworking_iOS_Tests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE482B5964C52EF002FDC2B /* Pods_iOS_HMNetworking_iOS_Tests_iOS.framework */; };
 		BACFB48FD4EDCA94E49629DC /* Pods_WatchOS_HMNetworking_WatchOS_Tests_WatchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA0D0C901621EF80F3BDA9C /* Pods_WatchOS_HMNetworking_WatchOS_Tests_WatchOS.framework */; };
 		C0F3BC750E58B2DDF6CD373A /* Pods_iOS_HMNetworking_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ED8D27E6FBBBEC85D8A86F /* Pods_iOS_HMNetworking_iOS.framework */; };
@@ -278,6 +286,8 @@
 		75BDC0892BB3384200B47B78 /* HMNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HMNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BDC0962BB3384400B47B78 /* Tests tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BDC1042BB49A8F00B47B78 /* UnitingClientsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitingClientsTests.swift; sourceTree = "<group>"; };
+		75BF9FD32C1A364900BF7968 /* ResponseValidatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidatorType.swift; sourceTree = "<group>"; };
+		75BF9FD82C1A36DC00BF7968 /* RetryValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryValidator.swift; sourceTree = "<group>"; };
 		7D30BC9B1474C8F3AE1DDC04 /* Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig"; path = "Target Support Files/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig"; sourceTree = "<group>"; };
 		83E72CEDBDFB0BBB9C00135F /* Pods-MacOS-HMNetworking MacOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOS-HMNetworking MacOS.release.xcconfig"; path = "Target Support Files/Pods-MacOS-HMNetworking MacOS/Pods-MacOS-HMNetworking MacOS.release.xcconfig"; sourceTree = "<group>"; };
 		998C68D2CC68996BD09C000B /* Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig"; path = "Target Support Files/Pods-MacOS-HMNetworking MacOS-Tests MacOS/Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -563,6 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				7557B0F52C08AA290042C542 /* HttpClientConfig.swift */,
+				75BF9FD32C1A364900BF7968 /* ResponseValidatorType.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -579,6 +590,7 @@
 			isa = PBXGroup;
 			children = (
 				7589FB0C2C0A227900AA41D2 /* Retry.swift */,
+				75BF9FD82C1A36DC00BF7968 /* RetryValidator.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1260,8 +1272,10 @@
 				7557B1642C08AA290042C542 /* HttpMethod.swift in Sources */,
 				7557B1702C08AA290042C542 /* QueryBuilder.swift in Sources */,
 				7589FB062C0A1EF800AA41D2 /* FormDataBody.swift in Sources */,
+				75BF9FDC2C1A36DC00BF7968 /* RetryValidator.swift in Sources */,
 				7547E6D12C0A11BD00ADD673 /* FormData.swift in Sources */,
 				7557B1142C08AA290042C542 /* HttpClient.swift in Sources */,
+				75BF9FD62C1A364900BF7968 /* ResponseValidatorType.swift in Sources */,
 				7557B1782C08AA290042C542 /* Query.swift in Sources */,
 				7557B18A2C08B0660042C542 /* HttpResponse.swift in Sources */,
 				7557B1402C08AA290042C542 /* Host.swift in Sources */,
@@ -1305,8 +1319,10 @@
 				7557B1652C08AA290042C542 /* HttpMethod.swift in Sources */,
 				7557B1712C08AA290042C542 /* QueryBuilder.swift in Sources */,
 				7589FB072C0A1EF800AA41D2 /* FormDataBody.swift in Sources */,
+				75BF9FD92C1A36DC00BF7968 /* RetryValidator.swift in Sources */,
 				7547E6D22C0A11BD00ADD673 /* FormData.swift in Sources */,
 				7557B1152C08AA290042C542 /* HttpClient.swift in Sources */,
+				75BF9FD42C1A364900BF7968 /* ResponseValidatorType.swift in Sources */,
 				7557B1792C08AA290042C542 /* Query.swift in Sources */,
 				7557B18B2C08B0660042C542 /* HttpResponse.swift in Sources */,
 				7557B1412C08AA290042C542 /* Host.swift in Sources */,
@@ -1350,8 +1366,10 @@
 				7557B1662C08AA290042C542 /* HttpMethod.swift in Sources */,
 				7557B1722C08AA290042C542 /* QueryBuilder.swift in Sources */,
 				7589FB082C0A1EF800AA41D2 /* FormDataBody.swift in Sources */,
+				75BF9FDB2C1A36DC00BF7968 /* RetryValidator.swift in Sources */,
 				7547E6D32C0A11BD00ADD673 /* FormData.swift in Sources */,
 				7557B1162C08AA290042C542 /* HttpClient.swift in Sources */,
+				75BF9FD72C1A364900BF7968 /* ResponseValidatorType.swift in Sources */,
 				7557B17A2C08AA290042C542 /* Query.swift in Sources */,
 				7557B18C2C08B0660042C542 /* HttpResponse.swift in Sources */,
 				7557B1422C08AA290042C542 /* Host.swift in Sources */,
@@ -1395,8 +1413,10 @@
 				7557B1672C08AA290042C542 /* HttpMethod.swift in Sources */,
 				7557B1732C08AA290042C542 /* QueryBuilder.swift in Sources */,
 				7589FB092C0A1EF800AA41D2 /* FormDataBody.swift in Sources */,
+				75BF9FDA2C1A36DC00BF7968 /* RetryValidator.swift in Sources */,
 				7547E6D42C0A11BD00ADD673 /* FormData.swift in Sources */,
 				7557B1172C08AA290042C542 /* HttpClient.swift in Sources */,
+				75BF9FD52C1A364900BF7968 /* ResponseValidatorType.swift in Sources */,
 				7557B17B2C08AA290042C542 /* Query.swift in Sources */,
 				7557B18D2C08B0660042C542 /* HttpResponse.swift in Sources */,
 				7557B1432C08AA290042C542 /* Host.swift in Sources */,

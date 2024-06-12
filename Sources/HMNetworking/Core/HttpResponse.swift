@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-public struct HttpResponse {
+public struct HttpResponse: Sendable {
     /// The URL request sent to the server.
     public let request: HttpRequest
 
