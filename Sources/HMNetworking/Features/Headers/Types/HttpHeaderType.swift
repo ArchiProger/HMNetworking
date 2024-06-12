@@ -8,6 +8,6 @@
 import Foundation
 import Alamofire
 
-public protocol HttpHeaderType {
+public protocol HttpHeaderType: Sendable {
     var header: HTTPHeader { get }
 }

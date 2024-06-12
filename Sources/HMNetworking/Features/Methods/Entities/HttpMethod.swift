@@ -8,6 +8,8 @@
 import Foundation
 import Alamofire
 
+extension HTTPMethod: @retroactive @unchecked Sendable { }
+
 public struct HttpMethod: HttpClientConfig {
     var method: HTTPMethod
     

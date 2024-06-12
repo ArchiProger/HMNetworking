@@ -8,11 +8,13 @@
 import Foundation
 import Alamofire
 
-public typealias PreparePerform = (HttpRequest) throws -> HttpRequest
-public typealias ResponseValidator = (HttpResponse) async throws -> HttpResponse
+extension Session: @unchecked @retroactive Sendable { }
+
+public typealias PreparePerform = @Sendable (HttpRequest) throws -> HttpRequest
+public typealias ResponseValidator = @Sendable (HttpResponse) async throws -> HttpResponse
 
 @dynamicMemberLookup
-public struct HttpRequest {
+public struct HttpRequest: Sendable {
     var urlRequest: URLRequest
     var credential: URLCredential?
     var mode: RequestMode.Mode = .request

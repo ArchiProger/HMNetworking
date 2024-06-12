@@ -8,8 +8,13 @@
 import Foundation
 import Alamofire
 
-public struct FormData {
-    var perform: (MultipartFormData) -> Void
+extension InputStream: @retroactive @unchecked Sendable { }
+extension OutputStream: @retroactive @unchecked Sendable { }
+extension HTTPHeaders: @retroactive @unchecked Sendable { }
+extension MultipartFormData: @retroactive @unchecked Sendable { }
+
+public struct FormData: Sendable {
+    var perform: @Sendable (MultipartFormData) -> Void
     
     /// Creates a body part from the data and appends it to the instance.
     ///

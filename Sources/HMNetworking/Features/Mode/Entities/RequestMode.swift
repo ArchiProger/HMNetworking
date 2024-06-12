@@ -23,7 +23,7 @@ public struct RequestMode: HttpClientConfig {
 }
 
 public extension RequestMode {
-    enum Mode {
+    enum Mode: Sendable {
         case request
         case upload
     }

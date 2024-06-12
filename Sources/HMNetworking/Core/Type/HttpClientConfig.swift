@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol HttpClientConfig {
+public protocol HttpClientConfig: Sendable {
     func prepare(request: HttpRequest) -> HttpRequest
     func process(response: HttpResponse) async throws -> HttpResponse
 }

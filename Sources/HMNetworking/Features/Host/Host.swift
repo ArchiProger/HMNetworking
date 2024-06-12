@@ -8,10 +8,10 @@
 import Foundation
 import Alamofire
 
-public struct Host: HttpClientConfig {
-    var url: URLConvertible
+public struct Host<Convertible: URLConvertible & Sendable>: HttpClientConfig {
+    var url: Convertible
     
-    public init(_ url: URLConvertible) {
+    public init(_ url: Convertible) {
         self.url = url
     }
     

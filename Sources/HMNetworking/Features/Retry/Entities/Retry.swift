@@ -8,8 +8,8 @@
 import Foundation
 
 public struct Retry: HttpClientConfig {
-    public typealias RetryCondition = (HttpResponse) -> Bool
-    public typealias RetryModifier = (HttpRequest) async throws -> HttpRequest
+    public typealias RetryCondition = @Sendable (HttpResponse) -> Bool
+    public typealias RetryModifier = @Sendable (HttpRequest) async throws -> HttpRequest
     
     var maxRetries: Int
     var shouldRetry: RetryCondition = { _ in false }

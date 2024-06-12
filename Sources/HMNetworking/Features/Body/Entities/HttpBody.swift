@@ -8,6 +8,8 @@
 import Foundation
 import Alamofire
 
+extension HTTPHeader: @unchecked @retroactive Sendable { }
+
 public struct HttpBody: HttpClientConfig {
     var data: Data?
     var header: HTTPHeader?

@@ -8,7 +8,7 @@
 import Foundation
 
 public struct Authentication: HttpClientConfig {
-    var perform: (HttpRequest) -> HttpRequest
+    var perform: @Sendable (HttpRequest) -> HttpRequest
     
     public init(credential: URLCredential) {
         perform = {
