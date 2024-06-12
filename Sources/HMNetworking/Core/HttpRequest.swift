@@ -14,18 +14,23 @@ public typealias PreparePerform = @Sendable (HttpRequest) throws -> HttpRequest
 public typealias ResponseValidator = @Sendable (HttpResponse) async throws -> HttpResponse
 
 @dynamicMemberLookup
-public struct HttpRequest: Sendable {
+public struct HttpRequest {
     var urlRequest: URLRequest
     var credential: URLCredential?
     var mode: RequestMode.Mode = .request
     var formData: MultipartFormData = .init()
     var prepare: PreparePerform = { $0 }
-    var validators: [any HttpClientConfig] = []
+    var validators: [HttpClientConfig] = []
     var session: Session
     
-    init(_ url: URLConvertible, session: Session = AF) throws {
+    public init(_ url: URLConvertible, session: Session = AF) throws {
         self.urlRequest = try .init(url: url, method: .get)
         self.session = session
+    }
+    
+    public init(session: Session = AF) {
+        try! self.init("https://www.google.com", session: session)
+        self.url = nil
     }
     
     var request: DataRequest {
@@ -69,16 +74,6 @@ public struct HttpRequest: Sendable {
         
         return components?.url
     }
-}
-
-// MARK: - Empty request
-public extension HttpRequest {
-    static let empty: HttpRequest = {
-        var request = try! HttpRequest("https://www.google.com")
-        request.url = nil
-        
-        return request
-    }()
 }
 
 // MARK: - Public methods

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol HttpClientConfig: Sendable {
+public protocol HttpClientConfig {
     func prepare(request: HttpRequest) -> HttpRequest
     func process(response: HttpResponse) async throws -> HttpResponse
 }
@@ -18,7 +18,7 @@ public extension HttpClientConfig {
 }
 
 public extension [HttpClientConfig] {
-    func request(initial: HttpRequest = .empty) -> HttpRequest {
+    func request(initial: HttpRequest = .init()) -> HttpRequest {
         var request = initial
         
         self.forEach {
