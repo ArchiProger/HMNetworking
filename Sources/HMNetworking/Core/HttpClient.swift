@@ -26,7 +26,8 @@ import Alamofire
 ///     }
 /// }
 /// ```
-public class HttpClient {
+public final class HttpClient: Sendable {
+    nonisolated(unsafe)
     var preferences: [HttpClientConfig]
     
     public init(@HttpClientConfigBuilder preferences: () -> [HttpClientConfig] = { [] }) {
