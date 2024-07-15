@@ -162,6 +162,14 @@
 		75E55B762C45527B007524FD /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B742C45527B007524FD /* Authorization.swift */; };
 		75E55B772C45527B007524FD /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B742C45527B007524FD /* Authorization.swift */; };
 		75E55B782C45527B007524FD /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B742C45527B007524FD /* Authorization.swift */; };
+		75E55B7A2C45532A007524FD /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B792C45532A007524FD /* ContentType.swift */; };
+		75E55B7B2C45532A007524FD /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B792C45532A007524FD /* ContentType.swift */; };
+		75E55B7C2C45532A007524FD /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B792C45532A007524FD /* ContentType.swift */; };
+		75E55B7D2C45532A007524FD /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B792C45532A007524FD /* ContentType.swift */; };
+		75E55B7F2C455423007524FD /* UserAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B7E2C455423007524FD /* UserAgent.swift */; };
+		75E55B802C455423007524FD /* UserAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B7E2C455423007524FD /* UserAgent.swift */; };
+		75E55B812C455423007524FD /* UserAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B7E2C455423007524FD /* UserAgent.swift */; };
+		75E55B822C455423007524FD /* UserAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B7E2C455423007524FD /* UserAgent.swift */; };
 		98038DE1EF3189466595611D /* Pods_iOS_HMNetworking_iOS_Tests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE482B5964C52EF002FDC2B /* Pods_iOS_HMNetworking_iOS_Tests_iOS.framework */; };
 		BACFB48FD4EDCA94E49629DC /* Pods_WatchOS_HMNetworking_WatchOS_Tests_WatchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA0D0C901621EF80F3BDA9C /* Pods_WatchOS_HMNetworking_WatchOS_Tests_WatchOS.framework */; };
 		C0F3BC750E58B2DDF6CD373A /* Pods_iOS_HMNetworking_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ED8D27E6FBBBEC85D8A86F /* Pods_iOS_HMNetworking_iOS.framework */; };
@@ -293,6 +301,8 @@
 		75BF9FD32C1A364900BF7968 /* ResponseValidatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseValidatorType.swift; sourceTree = "<group>"; };
 		75BF9FD82C1A36DC00BF7968 /* RetryValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryValidator.swift; sourceTree = "<group>"; };
 		75E55B742C45527B007524FD /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		75E55B792C45532A007524FD /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
+		75E55B7E2C455423007524FD /* UserAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgent.swift; sourceTree = "<group>"; };
 		7D30BC9B1474C8F3AE1DDC04 /* Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig"; path = "Target Support Files/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig"; sourceTree = "<group>"; };
 		83E72CEDBDFB0BBB9C00135F /* Pods-MacOS-HMNetworking MacOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOS-HMNetworking MacOS.release.xcconfig"; path = "Target Support Files/Pods-MacOS-HMNetworking MacOS/Pods-MacOS-HMNetworking MacOS.release.xcconfig"; sourceTree = "<group>"; };
 		998C68D2CC68996BD09C000B /* Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig"; path = "Target Support Files/Pods-MacOS-HMNetworking MacOS-Tests MacOS/Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -469,6 +479,8 @@
 				7557B0FA2C08AA290042C542 /* Header.swift */,
 				7557B0FB2C08AA290042C542 /* HttpHeaders.swift */,
 				75E55B742C45527B007524FD /* Authorization.swift */,
+				75E55B792C45532A007524FD /* ContentType.swift */,
+				75E55B7E2C455423007524FD /* UserAgent.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1275,6 +1287,7 @@
 				7557B1502C08AA290042C542 /* HttpClientConfig.swift in Sources */,
 				7589FB142C0A27E500AA41D2 /* RequestMode.swift in Sources */,
 				7557B1342C08AA290042C542 /* HttpBody.swift in Sources */,
+				75E55B802C455423007524FD /* UserAgent.swift in Sources */,
 				7557B1642C08AA290042C542 /* HttpMethod.swift in Sources */,
 				7557B1702C08AA290042C542 /* QueryBuilder.swift in Sources */,
 				7589FB062C0A1EF800AA41D2 /* FormDataBody.swift in Sources */,
@@ -1290,6 +1303,7 @@
 				7557B1182C08AA290042C542 /* HttpRequest.swift in Sources */,
 				7557B1602C08AA290042C542 /* HttpHeaderType.swift in Sources */,
 				7589FB0D2C0A227900AA41D2 /* Retry.swift in Sources */,
+				75E55B7B2C45532A007524FD /* ContentType.swift in Sources */,
 				75E55B752C45527B007524FD /* Authorization.swift in Sources */,
 				7557B1542C08AA290042C542 /* HttpHeadersBuilder.swift in Sources */,
 				7589FB202C0A69CE00AA41D2 /* Authentication.swift in Sources */,
@@ -1323,6 +1337,7 @@
 				7557B1512C08AA290042C542 /* HttpClientConfig.swift in Sources */,
 				7589FB152C0A27E500AA41D2 /* RequestMode.swift in Sources */,
 				7557B1352C08AA290042C542 /* HttpBody.swift in Sources */,
+				75E55B7F2C455423007524FD /* UserAgent.swift in Sources */,
 				7557B1652C08AA290042C542 /* HttpMethod.swift in Sources */,
 				7557B1712C08AA290042C542 /* QueryBuilder.swift in Sources */,
 				7589FB072C0A1EF800AA41D2 /* FormDataBody.swift in Sources */,
@@ -1338,6 +1353,7 @@
 				7557B1192C08AA290042C542 /* HttpRequest.swift in Sources */,
 				7557B1612C08AA290042C542 /* HttpHeaderType.swift in Sources */,
 				7589FB0E2C0A227900AA41D2 /* Retry.swift in Sources */,
+				75E55B7D2C45532A007524FD /* ContentType.swift in Sources */,
 				75E55B762C45527B007524FD /* Authorization.swift in Sources */,
 				7557B1552C08AA290042C542 /* HttpHeadersBuilder.swift in Sources */,
 				7589FB212C0A69CE00AA41D2 /* Authentication.swift in Sources */,
@@ -1371,6 +1387,7 @@
 				7557B1522C08AA290042C542 /* HttpClientConfig.swift in Sources */,
 				7589FB162C0A27E500AA41D2 /* RequestMode.swift in Sources */,
 				7557B1362C08AA290042C542 /* HttpBody.swift in Sources */,
+				75E55B812C455423007524FD /* UserAgent.swift in Sources */,
 				7557B1662C08AA290042C542 /* HttpMethod.swift in Sources */,
 				7557B1722C08AA290042C542 /* QueryBuilder.swift in Sources */,
 				7589FB082C0A1EF800AA41D2 /* FormDataBody.swift in Sources */,
@@ -1386,6 +1403,7 @@
 				7557B11A2C08AA290042C542 /* HttpRequest.swift in Sources */,
 				7557B1622C08AA290042C542 /* HttpHeaderType.swift in Sources */,
 				7589FB0F2C0A227900AA41D2 /* Retry.swift in Sources */,
+				75E55B7C2C45532A007524FD /* ContentType.swift in Sources */,
 				75E55B772C45527B007524FD /* Authorization.swift in Sources */,
 				7557B1562C08AA290042C542 /* HttpHeadersBuilder.swift in Sources */,
 				7589FB222C0A69CE00AA41D2 /* Authentication.swift in Sources */,
@@ -1419,6 +1437,7 @@
 				7557B1532C08AA290042C542 /* HttpClientConfig.swift in Sources */,
 				7589FB172C0A27E500AA41D2 /* RequestMode.swift in Sources */,
 				7557B1372C08AA290042C542 /* HttpBody.swift in Sources */,
+				75E55B822C455423007524FD /* UserAgent.swift in Sources */,
 				7557B1672C08AA290042C542 /* HttpMethod.swift in Sources */,
 				7557B1732C08AA290042C542 /* QueryBuilder.swift in Sources */,
 				7589FB092C0A1EF800AA41D2 /* FormDataBody.swift in Sources */,
@@ -1434,6 +1453,7 @@
 				7557B11B2C08AA290042C542 /* HttpRequest.swift in Sources */,
 				7557B1632C08AA290042C542 /* HttpHeaderType.swift in Sources */,
 				7589FB102C0A227900AA41D2 /* Retry.swift in Sources */,
+				75E55B7A2C45532A007524FD /* ContentType.swift in Sources */,
 				75E55B782C45527B007524FD /* Authorization.swift in Sources */,
 				7557B1572C08AA290042C542 /* HttpHeadersBuilder.swift in Sources */,
 				7589FB232C0A69CE00AA41D2 /* Authentication.swift in Sources */,
