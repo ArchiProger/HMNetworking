@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 extension Session: @unchecked @retroactive Sendable { }
+extension AFDataResponse: @unchecked @retroactive Sendable { }
 
 public typealias PreparePerform = @Sendable (HttpRequest) throws -> HttpRequest
 
@@ -30,6 +31,16 @@ public struct HttpRequest: Sendable {
     public init(session: Session = AF) {
         try! self.init("https://www.google.com", session: session)
         self.url = nil
+    }
+    
+    var configuration: URLSessionConfiguration {
+        get {
+            session.sessionConfiguration
+        }
+        
+        set {
+            session = Session(configuration: newValue)
+        }
     }
     
     var request: DataRequest {
