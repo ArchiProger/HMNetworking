@@ -22,6 +22,7 @@ public struct HttpRequest: Sendable {
     var prepare: PreparePerform = { $0 }
     var validators: [ResponseValidatorType] = []
     var session: Session
+    // TODO: Реализовать структуру HttpCache, которая занимается кеширование запросов
     
     public init(_ url: URLConvertible, session: Session = AF) throws {
         self.urlRequest = try .init(url: url, method: .get)
