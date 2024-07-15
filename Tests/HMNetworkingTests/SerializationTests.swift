@@ -8,7 +8,7 @@
 import XCTest
 import HMNetworking
 
-fileprivate struct PostDTO: Codable {
+struct PostDTO: Codable {
     var id: Int? = nil
     var title: String
     var body: String

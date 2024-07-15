@@ -17,7 +17,7 @@ struct CacheResponse: ResponseValidatorType {
         
         guard let data, let httpResponse else { return response }
         
-        let cachedURLResponse = CachedURLResponse(response: httpResponse, data: data)
+        let cachedURLResponse = CachedURLResponse(response: httpResponse, data: data, storagePolicy: .allowed)
         
         cache.storeCachedResponse(cachedURLResponse, for: request)
         

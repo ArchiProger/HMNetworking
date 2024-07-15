@@ -14,9 +14,13 @@ public struct Cache: HttpClientConfig {
     public init() { }
     
     public func prepare(request: HttpRequest) -> HttpRequest {
+        var configuration = request.configuration
+        configuration.urlCache = cache
+        configuration.requestCachePolicy = policy
+        
         var request = request
-        request.configuration.urlCache = cache
         request.cachePolicy = policy
+        request.configuration = configuration
         request.validators.append(CacheResponse(cache: cache ?? URLCache.shared))
         
         return request
