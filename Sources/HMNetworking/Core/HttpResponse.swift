@@ -27,12 +27,15 @@ public struct HttpResponse: Sendable {
     /// The result of response serialization.
     public let result: Result<Data?, Error>
     
+    public let httpResponse: HTTPURLResponse?
+    
     init(from response: AFDataResponse<Data?>, with request: HttpRequest) {
         self.request = request
         self.result = response.result.mapError { $0 as Error }
         self.statusCode = response.response?.statusCode ?? 200
         self.metrics = response.metrics
         self.serializationDuration = response.serializationDuration
+        self.httpResponse = response.response
     }
 }
 
