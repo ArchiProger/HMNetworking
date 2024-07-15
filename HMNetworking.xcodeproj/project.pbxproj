@@ -174,10 +174,6 @@
 		75E55B872C45580E007524FD /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B852C45580E007524FD /* Cache.swift */; };
 		75E55B882C45580E007524FD /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B852C45580E007524FD /* Cache.swift */; };
 		75E55B892C45580E007524FD /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B852C45580E007524FD /* Cache.swift */; };
-		75E55B8B2C4561CC007524FD /* CacheResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B8A2C4561CC007524FD /* CacheResponse.swift */; };
-		75E55B8C2C4561CC007524FD /* CacheResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B8A2C4561CC007524FD /* CacheResponse.swift */; };
-		75E55B8D2C4561CC007524FD /* CacheResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B8A2C4561CC007524FD /* CacheResponse.swift */; };
-		75E55B8E2C4561CC007524FD /* CacheResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B8A2C4561CC007524FD /* CacheResponse.swift */; };
 		75E55B902C4574D5007524FD /* CacheTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B8F2C4574D5007524FD /* CacheTest.swift */; };
 		75E55B912C4574D5007524FD /* CacheTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B8F2C4574D5007524FD /* CacheTest.swift */; };
 		75E55B922C4574D5007524FD /* CacheTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B8F2C4574D5007524FD /* CacheTest.swift */; };
@@ -316,7 +312,6 @@
 		75E55B792C45532A007524FD /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		75E55B7E2C455423007524FD /* UserAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgent.swift; sourceTree = "<group>"; };
 		75E55B852C45580E007524FD /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
-		75E55B8A2C4561CC007524FD /* CacheResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheResponse.swift; sourceTree = "<group>"; };
 		75E55B8F2C4574D5007524FD /* CacheTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTest.swift; sourceTree = "<group>"; };
 		7D30BC9B1474C8F3AE1DDC04 /* Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig"; path = "Target Support Files/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig"; sourceTree = "<group>"; };
 		83E72CEDBDFB0BBB9C00135F /* Pods-MacOS-HMNetworking MacOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOS-HMNetworking MacOS.release.xcconfig"; path = "Target Support Files/Pods-MacOS-HMNetworking MacOS/Pods-MacOS-HMNetworking MacOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -749,7 +744,6 @@
 			isa = PBXGroup;
 			children = (
 				75E55B852C45580E007524FD /* Cache.swift */,
-				75E55B8A2C4561CC007524FD /* CacheResponse.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1326,7 +1320,6 @@
 				7557B1402C08AA290042C542 /* Host.swift in Sources */,
 				75E55B872C45580E007524FD /* Cache.swift in Sources */,
 				7547E6CC2C0A115300ADD673 /* FormDataBuilder.swift in Sources */,
-				75E55B8C2C4561CC007524FD /* CacheResponse.swift in Sources */,
 				7532392D2BC3F5FF00D830ED /* HMNetworking.docc in Sources */,
 				7557B1182C08AA290042C542 /* HttpRequest.swift in Sources */,
 				7557B1602C08AA290042C542 /* HttpHeaderType.swift in Sources */,
@@ -1379,7 +1372,6 @@
 				7557B1412C08AA290042C542 /* Host.swift in Sources */,
 				75E55B892C45580E007524FD /* Cache.swift in Sources */,
 				7547E6CD2C0A115300ADD673 /* FormDataBuilder.swift in Sources */,
-				75E55B8B2C4561CC007524FD /* CacheResponse.swift in Sources */,
 				7532392E2BC3F5FF00D830ED /* HMNetworking.docc in Sources */,
 				7557B1192C08AA290042C542 /* HttpRequest.swift in Sources */,
 				7557B1612C08AA290042C542 /* HttpHeaderType.swift in Sources */,
@@ -1432,7 +1424,6 @@
 				7557B1422C08AA290042C542 /* Host.swift in Sources */,
 				75E55B862C45580E007524FD /* Cache.swift in Sources */,
 				7547E6CE2C0A115300ADD673 /* FormDataBuilder.swift in Sources */,
-				75E55B8E2C4561CC007524FD /* CacheResponse.swift in Sources */,
 				7532392F2BC3F5FF00D830ED /* HMNetworking.docc in Sources */,
 				7557B11A2C08AA290042C542 /* HttpRequest.swift in Sources */,
 				7557B1622C08AA290042C542 /* HttpHeaderType.swift in Sources */,
@@ -1485,7 +1476,6 @@
 				7557B1432C08AA290042C542 /* Host.swift in Sources */,
 				75E55B882C45580E007524FD /* Cache.swift in Sources */,
 				7547E6CF2C0A115300ADD673 /* FormDataBuilder.swift in Sources */,
-				75E55B8D2C4561CC007524FD /* CacheResponse.swift in Sources */,
 				753239302BC3F5FF00D830ED /* HMNetworking.docc in Sources */,
 				7557B11B2C08AA290042C542 /* HttpRequest.swift in Sources */,
 				7557B1632C08AA290042C542 /* HttpHeaderType.swift in Sources */,
