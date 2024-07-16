@@ -21,8 +21,8 @@ public struct HttpRequest: Sendable {
     var formData: MultipartFormData = .init()
     var prepare: PreparePerform = { $0 }
     var validators: [ResponseValidatorType] = []
+    var cache: HttpCache? = nil
     var session: Session
-    // TODO: Реализовать структуру HttpCache, которая занимается кеширование запросов
     
     public init(_ url: URLConvertible, session: Session = AF) throws {
         self.urlRequest = try .init(url: url, method: .get)
@@ -105,6 +105,10 @@ public extension HttpRequest {
                 case .upload: try uploadRequest
             }
             
+            if let response = cache?.cachedResponse(for: self) {
+                return response
+            }
+            
             let response = await withUnsafeContinuation { continuation in
                 request
                     .response { response in
@@ -116,6 +120,8 @@ public extension HttpRequest {
             for validator in validators {
                 result = try await validator.execute(for: result)
             }
+            
+            cache?.save(result)
             
             return result
         }

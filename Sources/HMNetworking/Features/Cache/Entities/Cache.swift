@@ -7,10 +7,10 @@
 
 import Foundation
 
-public typealias CachingCondition = @Sendable (HttpRequest) -> Bool
-public typealias CachedResultCondition = @Sendable (HttpResponse) -> Bool
+public typealias CachingCondition = @Sendable (HttpResponse) -> Bool
+public typealias CachedResultCondition = @Sendable (HttpRequest) -> Bool
 
-public struct Cache: HttpClientConfig, ResponseValidatorType {
+public struct Cache: HttpClientConfig {
     var cache: URLCache
     var shouldCache: CachingCondition = { _ in false }
     var shouldReturnCachedResult: CachedResultCondition = { _ in false }
@@ -20,28 +20,18 @@ public struct Cache: HttpClientConfig, ResponseValidatorType {
     }
     
     public func prepare(request: HttpRequest) -> HttpRequest {
-        var configuration = request.configuration
+        let configuration = request.configuration
         configuration.urlCache = cache
         
         var request = request
         request.configuration = configuration
-        request.validators.append(self)
+        request.cache = HttpCache(
+            cache: cache,
+            shouldCache: shouldCache,
+            shouldReturnCachedResult: shouldReturnCachedResult
+        )
         
         return request
-    }
-    
-    public func execute(for response: HttpResponse) async throws -> HttpResponse {
-        let request = response.request.urlRequest
-        let data = (try? response.data) ?? Data()
-        let httpResponse = response.httpResponse
-        
-        guard let httpResponse else { return response }
-        
-        let cachedURLResponse = CachedURLResponse(response: httpResponse, data: data, storagePolicy: .allowed)
-        
-        cache.storeCachedResponse(cachedURLResponse, for: request)
-        
-        return response
     }
 }
 

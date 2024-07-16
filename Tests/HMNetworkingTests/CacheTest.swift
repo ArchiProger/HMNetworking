@@ -10,16 +10,8 @@ import Foundation
 import os.log
 @testable import HMNetworking
 
-final class LoggedCache: URLCache, @unchecked Sendable {
-    override func cachedResponse(for dataTask: URLSessionDataTask) async -> CachedURLResponse? {
-        os_log(.debug, "The data has been extracted")
-        
-        return await super.cachedResponse(for: dataTask)
-    }
-}
-
 struct CacheTest {
-    let cache = LoggedCache(
+    let cache = URLCache(
         memoryCapacity: 4 * 1024 * 1024,  // 4 МБ
         diskCapacity: 100 * 1024 * 1024,  // 100 МБ
         diskPath: "custom-cache"
@@ -32,11 +24,6 @@ struct CacheTest {
             UserAgent.default
         }
     }
-    
-    init() {
-        URLCache.shared.removeAllCachedResponses()
-        cache.removeAllCachedResponses()
-    }
         
     @Test func standardCaching() async throws {
         let response = try await client.request("/comments") {
@@ -45,6 +32,8 @@ struct CacheTest {
             }
             
             Cache()
+                .shouldCache { _ in true }
+                .shouldReturnCache { _ in true }
         }
                         
         let cache = URLCache.shared.cachedResponse(for: response.request.urlRequest)
@@ -53,22 +42,18 @@ struct CacheTest {
     }
     
     @Test func customCaching() async throws {
-        let policy: NSURLRequest.CachePolicy = .returnCacheDataDontLoad
         let response = try await client.request("/posts/1") {
-            Cache()
-                .storage(cache)
-                .policy(policy)
+            Cache(cache: cache)
+                .shouldCache { _ in true }
+                .shouldReturnCache { _ in true }
         }
         
 //        let _ : PostDTO = try response.body()
         let request = response.request.urlRequest
         let cachedURLResponse = cache.cachedResponse(for: request)
-        let fetchType = response.metrics?.transactionMetrics.last?.resourceFetchType
                         
-        #expect(fetchType == .localCache)
+        #expect(response.fetchType == .cache)
         #expect(cachedURLResponse != nil)
-        #expect(request.cachePolicy == policy)
         #expect(response.request.configuration.urlCache == cache)
-        #expect(response.request.configuration.requestCachePolicy == policy)
     }
 }

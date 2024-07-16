@@ -178,6 +178,10 @@
 		75E55B912C4574D5007524FD /* CacheTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B8F2C4574D5007524FD /* CacheTest.swift */; };
 		75E55B922C4574D5007524FD /* CacheTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B8F2C4574D5007524FD /* CacheTest.swift */; };
 		75E55B932C4574D5007524FD /* CacheTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E55B8F2C4574D5007524FD /* CacheTest.swift */; };
+		75F705A42C46E7F500BFACE6 /* HttpCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F705A32C46E7F500BFACE6 /* HttpCache.swift */; };
+		75F705A52C46E7F500BFACE6 /* HttpCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F705A32C46E7F500BFACE6 /* HttpCache.swift */; };
+		75F705A62C46E7F500BFACE6 /* HttpCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F705A32C46E7F500BFACE6 /* HttpCache.swift */; };
+		75F705A72C46E7F500BFACE6 /* HttpCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F705A32C46E7F500BFACE6 /* HttpCache.swift */; };
 		98038DE1EF3189466595611D /* Pods_iOS_HMNetworking_iOS_Tests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE482B5964C52EF002FDC2B /* Pods_iOS_HMNetworking_iOS_Tests_iOS.framework */; };
 		BACFB48FD4EDCA94E49629DC /* Pods_WatchOS_HMNetworking_WatchOS_Tests_WatchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA0D0C901621EF80F3BDA9C /* Pods_WatchOS_HMNetworking_WatchOS_Tests_WatchOS.framework */; };
 		C0F3BC750E58B2DDF6CD373A /* Pods_iOS_HMNetworking_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ED8D27E6FBBBEC85D8A86F /* Pods_iOS_HMNetworking_iOS.framework */; };
@@ -313,6 +317,7 @@
 		75E55B7E2C455423007524FD /* UserAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgent.swift; sourceTree = "<group>"; };
 		75E55B852C45580E007524FD /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		75E55B8F2C4574D5007524FD /* CacheTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTest.swift; sourceTree = "<group>"; };
+		75F705A32C46E7F500BFACE6 /* HttpCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpCache.swift; sourceTree = "<group>"; };
 		7D30BC9B1474C8F3AE1DDC04 /* Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig"; path = "Target Support Files/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS/Pods-WatchOS-HMNetworking WatchOS-Tests WatchOS.release.xcconfig"; sourceTree = "<group>"; };
 		83E72CEDBDFB0BBB9C00135F /* Pods-MacOS-HMNetworking MacOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOS-HMNetworking MacOS.release.xcconfig"; path = "Target Support Files/Pods-MacOS-HMNetworking MacOS/Pods-MacOS-HMNetworking MacOS.release.xcconfig"; sourceTree = "<group>"; };
 		998C68D2CC68996BD09C000B /* Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig"; path = "Target Support Files/Pods-MacOS-HMNetworking MacOS-Tests MacOS/Pods-MacOS-HMNetworking MacOS-Tests MacOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -744,6 +749,7 @@
 			isa = PBXGroup;
 			children = (
 				75E55B852C45580E007524FD /* Cache.swift */,
+				75F705A32C46E7F500BFACE6 /* HttpCache.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1333,6 +1339,7 @@
 				7557B1742C08AA290042C542 /* Parameter.swift in Sources */,
 				7557B15C2C08AA290042C542 /* HttpHeaders.swift in Sources */,
 				7557B14C2C08AA290042C542 /* ResponseValidation.swift in Sources */,
+				75F705A62C46E7F500BFACE6 /* HttpCache.swift in Sources */,
 				7557B1482C08AA290042C542 /* Prepare.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1385,6 +1392,7 @@
 				7557B1752C08AA290042C542 /* Parameter.swift in Sources */,
 				7557B15D2C08AA290042C542 /* HttpHeaders.swift in Sources */,
 				7557B14D2C08AA290042C542 /* ResponseValidation.swift in Sources */,
+				75F705A42C46E7F500BFACE6 /* HttpCache.swift in Sources */,
 				7557B1492C08AA290042C542 /* Prepare.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1437,6 +1445,7 @@
 				7557B1762C08AA290042C542 /* Parameter.swift in Sources */,
 				7557B15E2C08AA290042C542 /* HttpHeaders.swift in Sources */,
 				7557B14E2C08AA290042C542 /* ResponseValidation.swift in Sources */,
+				75F705A52C46E7F500BFACE6 /* HttpCache.swift in Sources */,
 				7557B14A2C08AA290042C542 /* Prepare.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1489,6 +1498,7 @@
 				7557B1772C08AA290042C542 /* Parameter.swift in Sources */,
 				7557B15F2C08AA290042C542 /* HttpHeaders.swift in Sources */,
 				7557B14F2C08AA290042C542 /* ResponseValidation.swift in Sources */,
+				75F705A72C46E7F500BFACE6 /* HttpCache.swift in Sources */,
 				7557B14B2C08AA290042C542 /* Prepare.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

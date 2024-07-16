@@ -20,22 +20,30 @@ public struct HttpResponse: Sendable {
     /// - Note: Due to `FB7624529`, collection of `URLSessionTaskMetrics` on watchOS is currently disabled.`
     ///
     public let metrics: URLSessionTaskMetrics?
-
-    /// The time taken to serialize the response.
-    public let serializationDuration: TimeInterval
     
     /// The result of response serialization.
     public let result: Result<Data?, Error>
     
     public let httpResponse: HTTPURLResponse?
     
+    public let fetchType: FetchType
+    
     init(from response: AFDataResponse<Data?>, with request: HttpRequest) {
         self.request = request
         self.result = response.result.mapError { $0 as Error }
         self.statusCode = response.response?.statusCode ?? 200
         self.metrics = response.metrics
-        self.serializationDuration = response.serializationDuration
         self.httpResponse = response.response
+        self.fetchType = .network
+    }
+    
+    init(from cache: CachedURLResponse, with request: HttpRequest) {
+        self.request = request
+        self.result = .success(cache.data)
+        self.statusCode = (cache.response as? HTTPURLResponse)?.statusCode ?? 200
+        self.metrics = nil
+        self.httpResponse = cache.response as? HTTPURLResponse
+        self.fetchType = .cache
     }
 }
 
@@ -54,5 +62,11 @@ public extension HttpResponse {
     
     func body<T: Decodable>(decoder: JSONDecoder = .init()) throws -> T {
         try decoder.decode(T.self, from: data)
+    }
+}
+
+public extension HttpResponse {
+    enum FetchType: Sendable {
+        case network, cache
     }
 }
